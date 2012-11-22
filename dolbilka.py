@@ -42,8 +42,8 @@ def main():
     test_prefix = "test_"
 
     statistic_files = {
-        "statistics_top_clicked_100_urls": "statistics_top_clicked_100_urls.tmp"
-        "user_statistics": "user_statistics.tmp"
+        "statistics_top_clicked_100_urls": "statistics_top_clicked_100_urls.tmp",
+        "user_statistics": "user_statistics.tmp",
     }
 
     _logger.info("Calcing Statistics")
