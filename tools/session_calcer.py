@@ -5,10 +5,17 @@ class SessionFeatureCalcer(object):
         self.session = session
 
     def calc_features(self):
-        results = [self.feature_day(), self.feature_has_click(), self.feature_session_duration()]
+        results = [self.feature_day(), self.feature_has_click()]
         results += self.features_avg_clicked_serps()
         results += self.features_serps_without_clicks()
         results += self.features_avg_time_for_click()
+        results += self.feature_click_count()
+        results += self.feature_queries_count()
+        results += self.feature_avg_time_between_event()
+        results += self.feature_click_on_urls()
+        results += self.feature_avg_click_on_urls()
+        results += self.feature_user_id()
+        results += self.feature_first_query_id()
         return results
 
     def feature_day(self):
@@ -69,13 +76,70 @@ class SessionFeatureCalcer(object):
             result = [-1] * 4
         return result
 
-    def feature_session_duration(self):
-        """ session duration time
+    def feature_click_count(self):
+        """ session's click count
         """
-        max_time = 0
+        click_count = 0
         for query in self.session.queries:
-            max_time = max(max_time, query.time_passed)
-            for click in query.clicks:
-                max_time = max(max_time, click.time_passed)
-        return max_time
+            click_count += len(query.clicks)
+        return [click_count]
 
+    def feature_queries_count(self):
+        """ session's queries count
+        """
+        return [len(self.session.queries)]
+
+    def feature_avg_time_between_event(self):
+        """ statistics of click times
+        """
+        click_times = []
+        click_times_in_query = []
+        for query in self.session.queries:
+            query_time = query.time_passed
+            times_in_query = []
+            for click in query.clicks:
+                times_in_query.append(click.time_passed - query_time)
+                click_times.append(click.time_passed - query_time)
+            
+            if len(times_in_query):
+                click_times_in_query.append(1.0 * sum(times_in_query) / len(times_in_query))
+        if len(click_times):
+            result = [1.0 * sum(click_times) / len(click_times), 1.0 * sum(click_times_in_query) / len(click_times_in_query)]
+        else:
+            result = [-1] * 2
+        return result
+
+    def feature_click_on_urls(self):
+        """ click_on_urls
+        """
+        click_on_urls_with_number = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        for query in self.session.queries:
+            for click in query.clicks:
+                click_on_urls_with_number[query.urls.index(click.url_id)] += 1
+        return click_on_urls_with_number
+
+    def feature_avg_click_on_urls(self):
+        """ avg_click_on_urls
+        """
+        click_avg_on_urls = []
+        for query in self.session.queries:
+            for click in query.clicks:
+                click_avg_on_urls.append(query.urls.index(click.url_id))
+        if len(click_avg_on_urls):
+            result = [1.0 * sum(click_avg_on_urls) / len(click_avg_on_urls)]
+        else:
+            result = [11]
+        return result
+
+    def feature_user_id(self):
+        """ session user id
+        """
+        return [self.session.user_id]
+
+    def feature_first_query_id(self):
+        """ session user id
+        """
+        if len(self.session.queries):
+            return [self.queries[0].query_id]
+        else:
+            return [0]
