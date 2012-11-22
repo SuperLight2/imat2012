@@ -2,7 +2,7 @@
 
 import sys
 from tools.session import *
-
+from tools.session_reader import SessionReader
 
 def main():
     for session in SessionReader().open(sys.argv[1]):
