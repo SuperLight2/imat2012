@@ -2,7 +2,6 @@
 
 from optparse import OptionParser
 import logging
-import sys
 import os
 
 _logger = logging.getLogger(__name__)
