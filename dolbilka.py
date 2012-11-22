@@ -54,6 +54,7 @@ def main():
         "id_and_answer": "id_and_answer.tsv.tmp",
         "general_features": "general.tsv.tmp",
         "top_url": "top_url.tmp",
+        "user_info": "user_info.tmp"
     }
 
     _logger.info("Generating id and answer column")
@@ -61,13 +62,17 @@ def main():
     calc_script(test_prefix + feature_files["id_and_answer"], "id_and_answer_calcer.py", test_file)
 
     _logger.info("Generating features")   
-    _logger.info("General Session Features")
+    _logger.info("Session Features")
     calc_script(train_prefix + feature_files["general_features"], "general_features.py", train_file)
     calc_script(test_prefix + feature_files["general_features"], "general_features.py", test_file)
 
-    _logger.info("General Statistic Features")
-    calc_script(test_prefix + feature_files["general_features"], "top_urls_features.py", train_file, [statistic_files["statistics_top_clicked_100_urls"]])
-    calc_script(train_prefix + feature_files["general_features"], "top_urls_features.py", test_file, [statistic_files["statistics_top_clicked_100_urls"]])
+    _logger.info("Statistic Features")
+    calc_script(test_prefix + feature_files["top_url"], "top_urls_features.py", train_file, [statistic_files["statistics_top_clicked_100_urls"]])
+    calc_script(train_prefix + feature_files["top_url"], "top_urls_features.py", test_file, [statistic_files["statistics_top_clicked_100_urls"]])
+
+    _logger.info("User Features")
+    calc_script(test_prefix + feature_files["user_info"], "user_info_features.py", train_file, [statistic_files["user_statistics"]])
+    calc_script(train_prefix + feature_files["user_info"], "user_info_features.py", test_file, [statistic_files["user_statistics"]])
 
     _logger.info("File list building")
     train_files_to_join = [train_prefix + feature_files["id_and_answer"]]
@@ -82,8 +87,8 @@ def main():
     join_all_files(test_prefix + "features.tsv", test_files_to_join)
 
     _logger.info("Generating fml features_pool")
-    shell_cmd("./convert_to_fml_features.py < " + train_prefix + "features.tsv > fml_" + train_prefix + "features.tsv")
-    shell_cmd("./convert_to_fml_features.py < " + test_prefix + "features.tsv > fml_" + test_prefix + "features.tsv")
+    shell_cmd("python convert_to_fml_features.py < " + train_prefix + "features.tsv > fml_" + train_prefix + "features.tsv")
+    shell_cmd("python convert_to_fml_features.py < " + test_prefix + "features.tsv > fml_" + test_prefix + "features.tsv")
     _logger.info("Finished")
 
 if __name__ == "__main__":

@@ -19,11 +19,8 @@ def main():
     url_features_calcer = UrlFeatureCalcer(urls)
     for session in SessionReader().open(sys.argv[1]):
         result = []
-        #result = [session.session_id, 1 if session.has_switch() else 0]
         result += url_features_calcer.calc_features(session)
         print "\t".join(map(str, result))
-
-
 
 if __name__ == '__main__':
     main()

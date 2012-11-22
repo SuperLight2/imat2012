@@ -28,7 +28,6 @@ class UserInfo(object):
         else:
             self.sessions_without_clicks += 1
 
-
     def flush(self):
         print "\t".join(map(str, [self.user_id, self.sessions, 1.0 * self.sessions_with_switch / self.sessions, 1.0 * self.sessions_without_clicks / self.sessions, self.clicks_count, 1.0 * self.clicks_count / self.queries_count]))
 
