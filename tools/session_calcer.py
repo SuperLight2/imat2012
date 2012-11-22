@@ -140,7 +140,7 @@ class SessionFeatureCalcer(object):
         """ session user id
         """
         if len(self.session.queries):
-            return [self.queries[0].query_id]
+            return [self.session.queries[0].query_id]
         else:
             return [0]
 
