@@ -5,7 +5,7 @@ class SessionFeatureCalcer(object):
         self.session = session
 
     def calc_features(self):
-        results = [self.feature_day(), self.feature_has_click()]
+        results = [self.feature_day(), self.feature_has_click(), self.feature_session_duration()]
         results += self.features_avg_clicked_serps()
         results += self.features_serps_without_clicks()
         results += self.features_avg_time_for_click()
@@ -143,3 +143,14 @@ class SessionFeatureCalcer(object):
             return [self.queries[0].query_id]
         else:
             return [0]
+
+    def feature_session_duration(self):
+        """ session duration time
+        """
+        max_time = 0
+        for query in self.session.queries:
+            max_time = max(max_time, query.time_passed)
+            for click in query.clicks:
+                max_time = max(max_time, click.time_passed)
+        return max_time
+
