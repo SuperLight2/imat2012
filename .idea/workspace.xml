@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dolbilka.py" afterPath="$PROJECT_DIR$/dolbilka.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/general_features.py" afterPath="$PROJECT_DIR$/general_features.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/id_and_answer_calcer.py" afterPath="$PROJECT_DIR$/id_and_answer_calcer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/statistics_top_clicked_urls.py" afterPath="$PROJECT_DIR$/statistics_top_clicked_urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/statistics_user_info.py" afterPath="$PROJECT_DIR$/statistics_user_info.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/session.py" afterPath="$PROJECT_DIR$/tools/session.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/session_calcer.py" afterPath="$PROJECT_DIR$/tools/session_calcer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/url_calcer.py" afterPath="$PROJECT_DIR$/tools/url_calcer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/top_urls_features.py" afterPath="$PROJECT_DIR$/top_urls_features.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user_info_features.py" afterPath="$PROJECT_DIR$/user_info_features.py" />
     </list>
     <ignored path="imat2012.iws" />
@@ -91,20 +82,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="session_reader.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="session_reader.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/session_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="19" selection-start="201" selection-end="201" vertical-scroll-proportion="0.22077923">
+            <state line="7" column="19" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_info_features.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="user_info_features.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/user_info_features.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="10" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="4" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.12615955">
+              <folding>
+                <element signature="e#23#33#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,6 +143,7 @@
         <option value="$PROJECT_DIR$/id_and_answer_calcer.py" />
         <option value="$PROJECT_DIR$/statistics_top_clicked_urls.py" />
         <option value="$PROJECT_DIR$/tools/session_calcer.py" />
+        <option value="$PROJECT_DIR$/tools/session_reader.py" />
       </list>
     </option>
   </component>
@@ -396,13 +390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_info_features.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="10" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dolbilka.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="-0.68">
@@ -453,8 +440,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/session_reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="19" selection-start="201" selection-end="201" vertical-scroll-proportion="0.22077923">
+        <state line="7" column="19" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_info_features.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.12615955">
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

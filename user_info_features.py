@@ -8,7 +8,7 @@ def main():
 
     for line in open(sys.argv[2]):
         s = line.strip().split('\t')
-        user = s[0]
+        user = int(s[0])
         info = s[1:]
         users[user] = info
 
