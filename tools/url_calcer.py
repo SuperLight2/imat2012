@@ -1,5 +1,3 @@
-from session import *
-
 class UrlFeatureCalcer(object):
     def __init__(self, urls):
         self.urls = urls

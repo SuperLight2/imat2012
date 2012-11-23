@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 
 from optparse import OptionParser
-import sys
-from tools.session import *
 from tools.session_reader import SessionReader
-from tools.session_calcer import SessionFeatureCalcer
-
 
 def main():
     optparser = OptionParser(usage="""

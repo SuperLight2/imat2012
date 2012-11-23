@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 class Click(object):
     def __init__(self, line):
         s = line.strip().split('\t')

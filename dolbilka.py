@@ -61,18 +61,18 @@ def main():
     calc_script(train_prefix + feature_files["id_and_answer"], "id_and_answer_calcer.py", train_file)
     calc_script(test_prefix + feature_files["id_and_answer"], "id_and_answer_calcer.py", test_file)
 
-    _logger.info("Generating features")   
+    _logger.info("Generating features")
     _logger.info("Session Features")
     calc_script(train_prefix + feature_files["general_features"], "general_features.py", train_file)
     calc_script(test_prefix + feature_files["general_features"], "general_features.py", test_file)
 
     _logger.info("Statistic Features")
-    calc_script(test_prefix + feature_files["top_url"], "top_urls_features.py", train_file, [statistic_files["statistics_top_clicked_100_urls"]])
-    calc_script(train_prefix + feature_files["top_url"], "top_urls_features.py", test_file, [statistic_files["statistics_top_clicked_100_urls"]])
+    calc_script(train_prefix + feature_files["top_url"], "top_urls_features.py", train_file, [statistic_files["statistics_top_clicked_100_urls"]])
+    calc_script(test_prefix + feature_files["top_url"], "top_urls_features.py", test_file, [statistic_files["statistics_top_clicked_100_urls"]])
 
     _logger.info("User Features")
-    calc_script(test_prefix + feature_files["user_info"], "user_info_features.py", train_file, [statistic_files["user_statistics"]])
-    calc_script(train_prefix + feature_files["user_info"], "user_info_features.py", test_file, [statistic_files["user_statistics"]])
+    calc_script(train_prefix + feature_files["user_info"], "user_info_features.py", train_file, [statistic_files["user_statistics"]])
+    calc_script(test_prefix + feature_files["user_info"], "user_info_features.py", test_file, [statistic_files["user_statistics"]])
 
     _logger.info("File list building")
     train_files_to_join = [train_prefix + feature_files["id_and_answer"]]

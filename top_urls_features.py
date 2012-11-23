@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import sys
-from tools.session import *
 from tools.session_reader import SessionReader
 from tools.url_calcer import UrlFeatureCalcer
 
