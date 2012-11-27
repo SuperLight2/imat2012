@@ -10,7 +10,7 @@ def main():
 
     for line in open(sys.argv[2]):
         s = line.strip().split('\t')
-        url = s[0]
+        url = int(s[0])
         ctr = float(s[1])
         shows = int(s[2])
         urls[url] = (ctr, shows)

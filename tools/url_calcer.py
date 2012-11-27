@@ -9,7 +9,6 @@ class UrlFeatureCalcer(object):
         return results
 
     def feature_urls_in_session(self, session):
-        result = 0
         urls_showed = set()
         for query in session.queries:
             for url in query.urls:
