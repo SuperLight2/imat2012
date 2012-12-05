@@ -100,7 +100,7 @@ def main():
         if features_groups != "id_and_answer":
             train_files_to_join.append(train_prefix + feature_files[features_groups[features_group]])
             test_files_to_join.append(test_prefix + feature_files[features_groups[features_group]])
-            features_description_files.append(feature_files[features_groups[features_group]])
+            features_description_files.append(features_description_file[features_groups[features_group]])
 
     result_file = "features.tsv"
     _logger.info("Joining features")

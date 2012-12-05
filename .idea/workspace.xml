@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/id_and_switch_calcer.py" />
-      <change type="MOVED" beforePath="C:\studing\СпецСеминар\switch_detect\github\imat2012\general_features.py" afterPath="$PROJECT_DIR$/features_session_general.py" />
-      <change type="MOVED" beforePath="C:\studing\СпецСеминар\switch_detect\github\imat2012\id_and_answer_calcer.py" afterPath="$PROJECT_DIR$/features_id_and_switch.py" />
-      <change type="MOVED" beforePath="C:\studing\СпецСеминар\switch_detect\github\imat2012\top_urls_features.py" afterPath="$PROJECT_DIR$/features_top_urls.py" />
-      <change type="MOVED" beforePath="C:\studing\СпецСеминар\switch_detect\github\imat2012\user_info_features.py" afterPath="$PROJECT_DIR$/features_users_info.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dolbilka.py" afterPath="$PROJECT_DIR$/dolbilka.py" />
     </list>
     <ignored path="imat2012.iws" />
@@ -28,15 +22,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="url_calcer.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/url_calcer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="24" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="session_calcer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/session_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,10 +34,28 @@
       <file leaf-file-name="dolbilka.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dolbilka.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="64" selection-start="5461" selection-end="5461" vertical-scroll-proportion="3.9470468">
+            <state line="113" column="46" selection-start="5381" selection-end="5407" vertical-scroll-proportion="0.57939917">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="features_users_info.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features_users_info.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_calcer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/user_calcer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="16" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,15 +104,6 @@
         <entry file="file://$PROJECT_DIR$/tools/features_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="13" column="34" selection-start="645" selection-end="645" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -442,13 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/user_calcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="46" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/url_calcer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="24" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
@@ -516,9 +503,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tools/user_calcer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="16" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features_users_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dolbilka.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="64" selection-start="5461" selection-end="5461" vertical-scroll-proportion="3.9470468">
+        <state line="113" column="46" selection-start="5381" selection-end="5407" vertical-scroll-proportion="0.57939917">
           <folding>
             <element signature="e#23#56#0" expanded="true" />
           </folding>
