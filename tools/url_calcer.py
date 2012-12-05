@@ -1,12 +1,8 @@
-class UrlFeatureCalcer(object):
+from features_calcer import FeaturesCalcer
+
+class UrlFeatureCalcer(FeaturesCalcer):
     def __init__(self, urls):
         self.urls = urls
-
-    def calc_features(self, session):
-        results = [self.feature_urls_in_session(session)]
-        results += self.features_crt_for_urls(session)
-        results += self.features_click_time_for_urls(session)
-        return results
 
     def feature_urls_in_session(self, session):
         urls_showed = set()

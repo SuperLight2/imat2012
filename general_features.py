@@ -1,14 +1,25 @@
 #!/usr/bin/env python
 
-import sys
+from optparse import OptionParser
+
 from tools.session_calcer import SessionFeatureCalcer
 from tools.session_reader import SessionReader
 
 def main():
-    for session in SessionReader().open(sys.argv[1]):
-        result = []
-        result += SessionFeatureCalcer(session).calc_features()
-        print "\t".join(map(str, result))
+    optparser = OptionParser(usage="""
+            %prog [OPTIONS] TRAIN_FILE TEST_FILE""")
+    optparser.add_option('-d', '--description', dest='description_file',
+        metavar='FILE', type='string', default=None,
+        help='filepath for features description')
+    opts, args = optparser.parse_args()
+
+    session_calcer = SessionFeatureCalcer()
+    for session in SessionReader().open(args[0]):
+        print "\t".join(map(str, session_calcer.calc_features(session)[0]))
+    if opts.description_file is not None:
+        output_file = open(opts.description_file, 'w')
+        print >> output_file, "\n".join(map(str, session_calcer.calc_features(session)[1]))
+        output_file.close()
 
 if __name__ == "__main__":
     main()
