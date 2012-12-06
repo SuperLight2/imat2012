@@ -1,7 +1,6 @@
 import sys
 
 def main():
-    
     for line in sys.stdin:
         s = line.strip().split('\t')
         if s[1] == "0":

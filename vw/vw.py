@@ -1,8 +1,6 @@
 from optparse import OptionParser
-import sys
 import os
 import logging
-import random
 
 _logger = logging.getLogger(__name__)
 
@@ -25,8 +23,8 @@ def main():
     predict_train_filename = "prediction_train_x.txt"
     
     vw_path = os.getenv("VOWPALWABBIT_HOME")
-    print vw_path
-    vw = "%s\\%s" % (os.getenv("VOWPALWABBIT_HOME"), "vw.exe")
+    _logger.debug("VOWPALWABBIT_HOME PATH %s" % vw_path)
+    vw = "%s\\%s" % (vw_path, "vw.exe")
     shell_cmd("%s -d %s --loss_function logistic -f %s" % (vw, train_features_file, out_file_name))
     shell_cmd("%s -d %s --loss_function logistic -i %s -t -p %s" % (vw, test_features_file, out_file_name, predict_test_filename))
     shell_cmd("%s -d %s --loss_function logistic -i %s -t -p %s" % (vw, train_features_file, out_file_name, predict_train_filename))
