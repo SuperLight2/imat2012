@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features_users_info.py" afterPath="$PROJECT_DIR$/features_users_info.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/features_calcer.py" afterPath="$PROJECT_DIR$/tools/features_calcer.py" />
     </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,10 +23,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="features_calcer.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="features_calcer.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tools/features_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="23" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
+            <state line="21" column="69" selection-start="623" selection-end="623" vertical-scroll-proportion="0.50595236">
               <folding />
             </state>
           </provider>
@@ -92,7 +93,7 @@
       <file leaf-file-name="url_calcer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/url_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="42" selection-start="156" selection-end="156" vertical-scroll-proportion="-2.72">
+            <state line="5" column="24" selection-start="181" selection-end="181" vertical-scroll-proportion="-3.4">
               <folding />
             </state>
           </provider>
@@ -101,16 +102,16 @@
       <file leaf-file-name="user_calcer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/user_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="42" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="features_users_info.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="features_users_info.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features_users_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="38" selection-start="642" selection-end="642" vertical-scroll-proportion="0.5734127">
+            <state line="20" column="38" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -141,10 +142,10 @@
         <option value="$PROJECT_DIR$/vw/vw_file_creater.py" />
         <option value="$PROJECT_DIR$/vw/vw_bagging.py" />
         <option value="$PROJECT_DIR$/tools/session_calcer.py" />
-        <option value="$PROJECT_DIR$/tools/features_calcer.py" />
-        <option value="$PROJECT_DIR$/tools/url_calcer.py" />
         <option value="$PROJECT_DIR$/tools/user_calcer.py" />
         <option value="$PROJECT_DIR$/features_users_info.py" />
+        <option value="$PROJECT_DIR$/tools/url_calcer.py" />
+        <option value="$PROJECT_DIR$/tools/features_calcer.py" />
       </list>
     </option>
   </component>
@@ -490,13 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/features_calcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="23" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/session_calcer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="132" column="15" selection-start="4840" selection-end="4840" vertical-scroll-proportion="-89.76">
@@ -518,23 +512,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/url_calcer.py">
+    <entry file="file://$PROJECT_DIR$/features_users_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="42" selection-start="156" selection-end="156" vertical-scroll-proportion="-2.72">
+        <state line="20" column="38" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/user_calcer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="42" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
+        <state line="9" column="0" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features_users_info.py">
+    <entry file="file://$PROJECT_DIR$/tools/url_calcer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="38" selection-start="642" selection-end="642" vertical-scroll-proportion="0.5734127">
+        <state line="5" column="24" selection-start="181" selection-end="181" vertical-scroll-proportion="-3.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/features_calcer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="69" selection-start="623" selection-end="623" vertical-scroll-proportion="0.50595236">
           <folding />
         </state>
       </provider>

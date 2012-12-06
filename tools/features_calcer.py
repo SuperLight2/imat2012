@@ -19,7 +19,7 @@ class FeatureDescriptor(object):
     def get_description(self):
         X = 1.0 * self.sum / self.count
         X_2 = 1.0 * self.sum_sqr / self.count
-        return [self.name, self.min, self.max, self.count, X, X_2 - X ** 2]
+        return [self.name, self.min, self.max, self.sum, self.sum_sqr, self.count, X, X_2 - X ** 2]
 
 
 class FeaturesCalcer(object):
