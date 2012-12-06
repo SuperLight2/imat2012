@@ -18,7 +18,7 @@ def main():
         s = line.strip().split('\t')
         user = int(s[0])
         info = s[1:]
-        users[user] = info
+        users[user] = map(float, info)
 
     user_feature_calcer = UserFeatureCalcer(users)
     for session in SessionReader().open(args[0]):
