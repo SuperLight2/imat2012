@@ -1,7 +1,7 @@
 from features_calcer import FeaturesCalcer
 
 class SessionFeatureCalcer(FeaturesCalcer):
-    def features_days(self, session):
+    def feature_days(self, session):
         result = []
         for i in xrange(6):
             result.append(session.day % (i + 2))
@@ -17,7 +17,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
                 break
         return int(has_click)
 
-    def features_avg_clicked_serps(self, session):
+    def feature_avg_clicked_serps(self, session):
         """ for each query calc rate of clicked urls
         output the average rate, maximum and minimum
         """
@@ -31,7 +31,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
             click_rate += [1.0 * len(clicked_urls) / len(all_urls)]
         return [sum(click_rate) / len(click_rate), max(click_rate), min(click_rate)]
 
-    def features_serps_without_clicks(self, session):
+    def feature_serps_without_clicks(self, session):
         """ rate of serps with clicks
         """
         has_query_without_clicks = False
@@ -43,7 +43,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
                 serps_with_clicks += 1
         return [int(has_query_without_clicks), 1.0 * serps_with_clicks / len(session.queries)]
 
-    def features_avg_time_for_click(self, session):
+    def feature_avg_time_for_click(self, session):
         """ simple statistics of click times
         """
         first_click_time = []
@@ -75,7 +75,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
         """
         return len(session.queries)
 
-    def features_avg_time_between_event(self, session):
+    def feature_avg_time_between_event(self, session):
         """ statistics of click times
         """
         click_times = []
@@ -95,7 +95,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
             result = [-1] * 2
         return result
 
-    def features_avg_time_between_click_to_click(self, session):
+    def feature_avg_time_between_click_to_click(self, session):
         """ statistics of click times
         """
         click_times = []
@@ -116,7 +116,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
             result = [-1] * 2
         return result
 
-    def features_avg_time_between_click_to_query(self, session):
+    def feature_avg_time_between_click_to_query(self, session):
         """ statistics of click times
         """
         sum_1 = 0
@@ -130,7 +130,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
         return [sum_1, sum_2]
 
-    def features_click_on_urls(self, session):
+    def feature_click_on_urls(self, session):
         """ click_on_urls
         """
         click_on_urls_with_number = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

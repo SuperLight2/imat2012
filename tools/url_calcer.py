@@ -12,7 +12,7 @@ class UrlFeatureCalcer(FeaturesCalcer):
                     urls_showed.add(url)
         return len(urls_showed)
 
-    def features_crt_for_urls(self, session):
+    def feature_crt_for_urls(self, session):
         shows = {}
         clicks = {}
         for url in self.urls:
@@ -33,7 +33,7 @@ class UrlFeatureCalcer(FeaturesCalcer):
                 ctrs.append(1.0 * clicks[url] / shows[url])
         return [1.0 * sum(ctrs) / len(ctrs)] if len(ctrs) else [0]
 
-    def features_click_time_for_urls(self, session):
+    def feature_click_time_for_urls(self, session):
         time = {}
         for url in self.urls:
             time[url] = -1

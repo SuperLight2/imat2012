@@ -1,3 +1,5 @@
+import types
+
 class FeaturesCalcer(object):
     def __init__(self):
         self.statistics = {}
@@ -23,30 +25,28 @@ class FeaturesCalcer(object):
     def get_description(self):
         result = []
         for name in self.feature_names:
+            X = 1.0 * self.statistics[name]['sum'] / self.statistics[name]['count']
+            X_2 = 1.0 * self.statistics[name]['sum_sqr'] / self.statistics[name]['count']
             result.append("\t".join(map(str,
-                [name, self.statistics[name]['min'], self.statistics[name]['max'],
-                 1.0 * self.statistics[name]['sum'] / self.statistics[name]['count'],
-                 1.0 * self.statistics[name]['sum_sqr'] / self.statistics[name]['count'] - (1.0 * self.statistics[name]['sum'] / self.statistics[name]['count']) ** 2])))
+                [name, self.statistics[name]['min'], self.statistics[name]['max'], X, X_2 - X * X])))
         return result
-
 
     def calc_features(self, *args, **kwargs):
         result = []
         for method in dir(self):
-            if method.startswith("feature_"):
-                feature_name = method[len("feature_"):]
+            if not isinstance(getattr(self, method), types.MethodType):
+                continue
+            feature_name = method[len("feature_"):]
+            sub_result = getattr(self, method)(*args, **kwargs)
+            if not isinstance(sub_result, types.ListType):
+                sub_result = [sub_result]
+            for i in xrange(len(sub_result)):
+                sub_feature_name = feature_name
+                if len(sub_result) > 1:
+                    sub_feature_name += "_" + str(i)
                 if not self.has_description:
-                    self.feature_names.append(feature_name)
-                value = getattr(self, method)(*args, **kwargs)
-                result += [value]
-                self.add_to_statistics(feature_name, value)
-            if method.startswith("features_"):
-                sub_result = getattr(self, method)(*args, **kwargs)
-                for i in xrange(len(sub_result)):
-                    feature_name = method[len("feature_"):] + "_" + str(i)
-                    if not self.has_description:
-                        self.feature_names.append(feature_name)
-                    self.add_to_statistics(feature_name, sub_result[i])
-                result += sub_result
+                    self.feature_names.append(sub_feature_name)
+                self.add_to_statistics(sub_feature_name, sub_result[i])
+            result += sub_result
         self.has_description = True
         return result
