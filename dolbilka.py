@@ -113,6 +113,7 @@ def main():
     os.system("touch %s" % description_file)
     for filepath in features_description_files:
         os.system("cat %s >> %s" % (filepath, description_file))
+        os.system("rm -f %s" % filepath)
 
     _logger.info("Generating fml features_pool")
     shell_cmd("python convert_to_fml_features.py < " + train_prefix + result_file + " > fml_" + train_prefix + result_file)
