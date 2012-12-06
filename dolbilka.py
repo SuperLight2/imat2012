@@ -97,7 +97,7 @@ def main():
     test_files_to_join = [test_prefix + feature_files[features_groups["id_and_answer"]]]
     features_description_files = [features_description_file[features_groups["id_and_answer"]]]
     for features_group in features_groups:
-        if features_groups != "id_and_answer":
+        if features_group != "id_and_answer":
             train_files_to_join.append(train_prefix + feature_files[features_groups[features_group]])
             test_files_to_join.append(test_prefix + feature_files[features_groups[features_group]])
             features_description_files.append(features_description_file[features_groups[features_group]])
