@@ -46,6 +46,8 @@ class FeaturesCalcer(object):
         for method in dir(self):
             if not isinstance(getattr(self, method), types.MethodType):
                 continue
+            if not method.startswith("feature_"):
+                continue
             feature_name = method[len("feature_"):]
             sub_result = getattr(self, method)(*args, **kwargs)
             if not isinstance(sub_result, types.ListType):
