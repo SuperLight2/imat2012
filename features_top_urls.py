@@ -23,10 +23,10 @@ def main():
 
     url_features_calcer = UrlFeatureCalcer(urls)
     for session in SessionReader().open(args[0]):
-        print "\t".join(map(str, url_features_calcer.calc_features(session)[1]))
+        print "\t".join(map(str, url_features_calcer.calc_features(session)))
     if opts.description_file is not None:
         output_file = open(opts.description_file, 'w')
-        print >> output_file, "\n".join(map(str, url_features_calcer.calc_features(session)[1]))
+        print >> output_file, "\n".join(map(str, url_features_calcer.get_description()))
         output_file.close()
 
 if __name__ == '__main__':

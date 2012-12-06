@@ -15,10 +15,10 @@ def main():
 
     session_id_and_switch_calcer = SessionIdAndSwitchFeatureCalcer()
     for session in SessionReader().open(args[0]):
-        print "\t".join(map(str, session_id_and_switch_calcer.calc_features(session)[0]))
+        print "\t".join(map(str, session_id_and_switch_calcer.calc_features(session)))
     if opts.description_file is not None:
         output_file = open(opts.description_file, 'w')
-        print >> output_file, "\n".join(map(str, session_id_and_switch_calcer.calc_features(session)[1]))
+        print >> output_file, "\n".join(map(str, session_id_and_switch_calcer.get_description()))
         output_file.close()
 
 if __name__ == "__main__":

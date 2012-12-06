@@ -22,10 +22,10 @@ def main():
 
     user_feature_calcer = UserFeatureCalcer(users)
     for session in SessionReader().open(args[0]):
-        print "\t".join(map(str, user_feature_calcer.calc_features(session)[1]))
+        print "\t".join(map(str, user_feature_calcer.calc_features(session)))
     if opts.description_file is not None:
         output_file = open(opts.description_file, 'w')
-        print >> output_file, "\n".join(map(str, user_feature_calcer.calc_features(session)[1]))
+        print >> output_file, "\n".join(map(str, user_feature_calcer.get_description()))
         output_file.close()
 
 
