@@ -2,6 +2,7 @@ from features_calcer import FeaturesCalcer
 
 class UrlFeatureCalcer(FeaturesCalcer):
     def __init__(self, urls):
+        super(type(self), self).__init__()
         self.urls = urls
 
     def feature_urls_in_session(self, session):
