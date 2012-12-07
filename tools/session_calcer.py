@@ -2,13 +2,14 @@ from features_calcer import FeaturesCalcer
 
 class SessionFeatureCalcer(FeaturesCalcer):
     def feature_days(self, session):
-        result = []
-        for i in xrange(6):
-            result.append(session.day % (i + 2))
-        return result
+        """
+        day module 7
+        """
+        return session.day % 7
 
     def feature_has_click(self, session):
-        """ 1 if session has one or more clicks
+        """
+        1 if session has one or more clicks
         """
         has_click = False
         for query in session.queries:
@@ -18,8 +19,10 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return int(has_click)
 
     def feature_avg_clicked_serps(self, session):
-        """ for each query calc rate of clicked urls
-        output the average rate, maximum and minimum
+        """
+        average calc rate of clicked urls
+        maximum calc rate of clicked urls
+        minimum calc rate of clicked urls output
         """
         click_rate = []
         for query in session.queries:
@@ -32,7 +35,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return [sum(click_rate) / len(click_rate), max(click_rate), min(click_rate)]
 
     def feature_serps_without_clicks(self, session):
-        """ rate of serps with clicks
+        """
+        rate of serps with clicks
         """
         has_query_without_clicks = False
         serps_with_clicks = 0
@@ -44,7 +48,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return [int(has_query_without_clicks), 1.0 * serps_with_clicks / len(session.queries)]
 
     def feature_avg_time_for_click(self, session):
-        """ simple statistics of click times
+        """
+        simple statistics of click times
         """
         first_click_time = []
         last_click_time = []
@@ -63,7 +68,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return result
 
     def feature_click_count(self, session):
-        """ session's click count
+        """
+        session's click count
         """
         click_count = 0
         for query in session.queries:
@@ -71,12 +77,14 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return click_count
 
     def feature_queries_count(self, session):
-        """ session's queries count
+        """
+        session's queries count
         """
         return len(session.queries)
 
     def feature_avg_time_between_event(self, session):
-        """ statistics of click times
+        """
+        statistics of click times
         """
         click_times = []
         click_times_in_query = []
@@ -96,7 +104,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return result
 
     def feature_avg_time_between_click_to_click(self, session):
-        """ statistics of click times
+        """
+        statistics of click times
         """
         click_times = []
         click_times_in_query = []
@@ -117,7 +126,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return result
 
     def feature_avg_time_between_click_to_query(self, session):
-        """ statistics of click times
+        """
+        statistics of click times
         """
         sum_1 = 0
         sum_2 = 0
@@ -131,7 +141,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return [sum_1, sum_2]
 
     def feature_click_on_urls(self, session):
-        """ click_on_urls
+        """
+        click_on_urls
         """
         click_on_urls_with_number = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         for query in session.queries:
@@ -140,7 +151,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return click_on_urls_with_number
 
     def feature_avg_click_on_urls(self, session):
-        """ avg_click_on_urls
+        """
+        avg_click_on_urls
         """
         click_avg_on_urls = []
         for query in session.queries:
@@ -153,7 +165,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
         return result
 
     def feature_first_query_id(self, session):
-        """ session user id
+        """
+        session user id
         """
         if len(session.queries):
             return session.queries[0].query_id
@@ -161,7 +174,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
             return 0
 
     def feature_session_duration(self, session):
-        """ session duration time
+        """
+        session duration time
         """
         max_time = 0
         for query in session.queries:
