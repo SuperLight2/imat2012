@@ -56,7 +56,7 @@ class FeaturesCalcer(object):
                 sub_result = [sub_result]
 
             description = getattr(self, method).__doc__
-            if description is not None:
+            if description is None:
                 description = ""
             description = [s.strip() for s in description.strip().split('\n')]
             description += [''] * (len(sub_result) - len(description))
