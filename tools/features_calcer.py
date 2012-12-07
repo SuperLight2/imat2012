@@ -29,10 +29,10 @@ class FeaturesCalcer(object):
         self.has_description = False
         self.feature_names = []
 
-    def add_to_statistics(self, key, value):
+    def add_to_statistics(self, key, description, value):
         if key not in self.statistics:
             self.feature_names.append(key)
-            self.statistics[key] = FeatureDescriptor(key, value)
+            self.statistics[key] = FeatureDescriptor(key, description, value)
         else:
             self.statistics[key].add(value)
 
