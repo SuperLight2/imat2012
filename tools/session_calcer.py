@@ -82,8 +82,14 @@ class SessionFeatureCalcer(FeaturesCalcer):
     def feature_queries_count(self, session):
         """
         queries count in session
+        queries count in session without clicks
+        first query clicks count
         """
-        return len(session.queries)
+        queries_without_clicks = 0
+        for query in session.queries:
+            if not len(query.clicks):
+                queries_without_clicks += 1
+        return len(session.queries), queries_without_clicks, len(session.queries[0].clicks)
 
     def feature_avg_time_between_event(self, session):
         """
@@ -111,23 +117,39 @@ class SessionFeatureCalcer(FeaturesCalcer):
         """
         average dweltime between all clicks (-1)
         average of average dweltimes between all clicks in serps (-1)
+        maximum of average dweltimes between all clicks in serps (-1)
+        percentage of long clicks (-1)
+        percentage of super long clicks (-1)
         """
+        long_click_duration = 3000
+        super_long_click_duration = 9000
+        long_clicks_count = 0
+        super_long_clicks_count = 0
         click_times = []
         click_times_in_query = []
         for query in session.queries:
             old_time = query.time_passed
             times_in_query = []
             for click in query.clicks:
-                times_in_query.append(click.time_passed - old_time)
-                click_times.append(click.time_passed - old_time)
+                duration = click.time_passed - old_time
+                times_in_query.append(duration)
+                click_times.append(duration)
+                if duration >= long_click_duration:
+                    long_clicks_count += 1
+                if duration >= super_long_click_duration:
+                    super_long_clicks_count += 1
                 old_time = click.time_passed
             
             if len(times_in_query):
                 click_times_in_query.append(1.0 * sum(times_in_query) / len(times_in_query))
         if len(click_times):
-            result = [1.0 * sum(click_times) / len(click_times), 1.0 * sum(click_times_in_query) / len(click_times_in_query)]
+            result = [1.0 * sum(click_times) / len(click_times),
+                      1.0 * sum(click_times_in_query) / len(click_times_in_query),
+                      max(click_times),
+                      1.0 * long_clicks_count / len(click_times),
+                      1.0 * super_long_clicks_count / len(click_times)]
         else:
-            result = [-1] * 2
+            result = [-1] * 5
         return result
 
     def feature_avg_time_between_click_to_query(self, session):
