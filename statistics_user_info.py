@@ -12,6 +12,11 @@ class UserInfo(object):
         self.queries_count = 0
         self.clicks_count = 0
 
+        self.ctr_length = 10
+        self.ctr_clicks = [0] * self.ctr_length
+        self.ctr_shows = [0] * self.ctr_length
+
+
     def add(self, session):
         self.sessions += 1
         if session.has_switch():
@@ -22,17 +27,33 @@ class UserInfo(object):
             self.queries_count += 1
             added_clicks += len(query.clicks)
 
+            clicked_position = [False] * min(self.ctr_length, len(query.urls))
+            for click in query.clicks:
+                clicked_position[query.urls.index(click.url_id)] = True
+            for index in xrange(len(clicked_position)):
+                if clicked_position[index]:
+                    self.ctr_clicks[index] += 1
+                self.ctr_shows[index] += 1
+
         if added_clicks:
             self.clicks_count += added_clicks
         else:
             self.sessions_without_clicks += 1
 
     def flush(self):
+        ctrs = [0] * self.ctr_length
+        for i in xrange(self.ctr_length):
+            if self.ctr_shows[i]:
+                ctrs[i] = 1.0 * self.ctr_clicks[i] / self.ctr_shows[i]
+            else:
+                ctrs[i] = 0
+
         print "\t".join(map(str, [self.user_id, self.sessions,
                                   1.0 * self.sessions_with_switch / self.sessions,
                                   1.0 * self.sessions_without_clicks / self.sessions,
                                   self.clicks_count,
-                                  1.0 * self.clicks_count / self.queries_count]))
+                                  1.0 * self.clicks_count / self.queries_count,
+                                  "\t".join(map(str, ctrs))]))
 
 
 def main():
