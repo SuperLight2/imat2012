@@ -3,6 +3,7 @@
 from optparse import OptionParser
 import logging
 import os
+from time import time
 
 _logger = logging.getLogger(__name__)
 
@@ -25,7 +26,9 @@ def calc_script(result_file, script_filepath, data_file, arguments = None):
         script_filepath = "python " + script_filepath
     if arguments is None:
         arguments = []
+    running_time = -time()
     shell_cmd("%s %s %s > %s" % (script_filepath, data_file, " ".join(arguments), result_file))
+    _logger.info("Running time: %s sec" % str(time() - running_time))
     return result_file
 
 def main():

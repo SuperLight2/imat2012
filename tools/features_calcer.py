@@ -1,9 +1,11 @@
 import types
+from time import time
 
 class FeatureDescriptor(object):
-    def __init__(self, name, description, value):
+    def __init__(self, name, description, calcing_time, value):
         self.name = name
         self.description = description
+        self.calcing_time = calcing_time
         self.min = value
         self.max = value
         self.count = 1
@@ -20,7 +22,9 @@ class FeatureDescriptor(object):
     def get_description(self):
         X = 1.0 * self.sum / self.count
         X_2 = 1.0 * self.sum_sqr / self.count
-        return [self.name, self.description, self.min, self.max, self.sum, self.sum_sqr, self.count, X, X_2 - X ** 2]
+        return [self.name, self.description, self.calcing_time,
+                self.min, self.max, self.sum,
+                self.sum_sqr, self.count, X, X_2 - X ** 2]
 
 
 class FeaturesCalcer(object):
@@ -29,10 +33,10 @@ class FeaturesCalcer(object):
         self.has_description = False
         self.feature_names = []
 
-    def add_to_statistics(self, key, description, value):
+    def add_to_statistics(self, key, description, calcing_time, value):
         if key not in self.statistics:
             self.feature_names.append(key)
-            self.statistics[key] = FeatureDescriptor(key, description, value)
+            self.statistics[key] = FeatureDescriptor(key, description, calcing_time, value)
         else:
             self.statistics[key].add(value)
 
@@ -51,7 +55,9 @@ class FeaturesCalcer(object):
                 continue
             feature_name = method[len("feature_"):]
 
+            calcing_time = -time()
             sub_result = getattr(self, method)(*args, **kwargs)
+            calcing_time += time()
             if not isinstance(sub_result, types.ListType):
                 sub_result = [sub_result]
 
@@ -63,7 +69,7 @@ class FeaturesCalcer(object):
 
             for i in xrange(len(sub_result)):
                 sub_feature_name = feature_name + ("" if len(sub_result) == 1 else "_" + str(i))
-                self.add_to_statistics(sub_feature_name, description[i], sub_result[i])
+                self.add_to_statistics(sub_feature_name, description[i], calcing_time, sub_result[i])
             result += sub_result
         self.has_description = True
         return result
