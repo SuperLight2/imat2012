@@ -89,7 +89,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
         for query in session.queries:
             if not len(query.clicks):
                 queries_without_clicks += 1
-        return len(session.queries), queries_without_clicks, len(session.queries[0].clicks)
+        return [len(session.queries), queries_without_clicks, len(session.queries[0].clicks)]
 
     def feature_avg_time_between_event(self, session):
         """
@@ -171,6 +171,17 @@ class SessionFeatureCalcer(FeaturesCalcer):
         X_2 = 1.0 * sum_sqr / len(session.queries)
         return [sum, sum_sqr, X, X_2 - X ** 2]
 
+    def feature_urls_shown(self, session):
+        """
+        maximum number of shown urls in serps
+        minimum number of shown urls in serps
+        average number of shown urls in serps
+        """
+        shown = []
+        for query in session.queries:
+            shown.append(len(query.urls))
+        return [max(shown), min(shown), 1.0 * sum(shown) / len(shown)]
+
     def feature_click_on_urls(self, session):
         """
         clicks count on 1-position
@@ -202,9 +213,9 @@ class SessionFeatureCalcer(FeaturesCalcer):
         if len(click_avg_on_urls):
             X = 1.0 * sum(click_avg_on_urls) / len(click_avg_on_urls)
             X_2 = 1.0 * sum([x ** 2 for x in click_avg_on_urls]) / len(click_avg_on_urls)
-            return X, X_2 - X ** 2
+            return [X, X_2 - X ** 2]
         else:
-            return 10, 10000
+            return [10, 10000]
 
     def feature_session_duration(self, session):
         """
