@@ -311,11 +311,44 @@ class SessionFeatureCalcer(FeaturesCalcer):
     def feature_session_duration(self, session):
         """
         session duration time
+        average query duration
+        maximum query duration
+        minimum query duration
         """
         max_time = 0
+        query_durations = []
         for query in session.queries:
             max_time = max(max_time, query.time_passed)
+            query_duration = 0
             for click in query.clicks:
                 max_time = max(max_time, click.time_passed)
-        return max_time
+                query_duration = max(query_duration, click.time_passed - query.time_passed)
+            query_durations.append(query_duration)
+        return [max_time, 1.0 * sum(query_durations) / len(query_durations),
+                max(query_durations), min(query_durations)]
+
+    def feature_first_click(self, session):
+        """
+        position of first click (11)
+        time of first click (0)
+        average of first clicks positions (?)
+        harmonic mean of first clicks positions (?)
+        average of first clicks times (?)
+        harmonic mean of first clicks times (?)
+        """
+        positions = []
+        times = []
+        for query in session.queries:
+            if len(query.clicks):
+                positions.append(query.urls.index(query.clicks[0].url_id))
+                times.append(query.clicks[0].time_passed - query.time_passed)
+        if not len(positions):
+            positions.append(11)
+            times.append(0)
+
+        X = 1.0 * sum(positions) / len(positions)
+        T = 1.0 * sum(times) / len(times)
+        X_1 = 1.0 * len(positions) / sum(1.0 / (x + 0.0001) for x in positions)
+        T_1 = 1.0 * len(times) / sum(1.0 / (x + 0.0001) for x in times)
+        return [positions[0], times[0], X, X_1, T, T_1]
 
