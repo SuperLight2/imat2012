@@ -7,7 +7,7 @@ class UserFeatureCalcer(FeaturesCalcer):
 
     def feature_user_info(self, session):
         """
-        user_id of session
+        user`s count of sessions
         user`s percentage of sessions with switch
         user`s percentage of sessions without clicks
         user`s clicks count
