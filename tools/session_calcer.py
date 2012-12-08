@@ -275,6 +275,22 @@ class SessionFeatureCalcer(FeaturesCalcer):
                     result[i] += 1
         return [1.0 * x / len(session.queries) for x in result]
 
+    def feature_wo_long_clicks_in_top3(self, session):
+        """
+        percentage of queries without long clicks in top3
+        """
+        result = 0
+        for query in session.queries:
+            has_long_click_in_top3 = False
+            top3_urls = query.urls[0:3]
+            old_time = query.time_passed
+            for click in query.clicks:
+                duration = click.time_passed - old_time
+                old_time = click.time_passed
+                if (click.url_id in top3_urls) and (duration >= 3000):
+                    has_long_click_in_top3 = True
+            result += int(not has_long_click_in_top3)
+        return 1.0 * result / len(session.queries)
 
     def feature_avg_click_on_urls(self, session):
         """
