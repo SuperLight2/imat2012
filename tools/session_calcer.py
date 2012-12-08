@@ -9,7 +9,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
     def feature_has_click(self, session):
         """
-        1 if session has one or more clicks
+        session has click
         """
         has_click = False
         for query in session.queries:
@@ -20,13 +20,12 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
     def feature_avg_clicked_serps(self, session):
         """
-        average calc rate of clicked urls
-        maximum calc rate of clicked urls
-        minimum calc rate of clicked urls output
+        average percentage of clicked urls in serp
+        maximum percentage of clicked urls in serp
+        minimum percentage of clicked urls in serp
         """
         click_rate = []
         for query in session.queries:
-            cur_result = 0
             all_urls = set(query.urls)
             clicked_urls = set()
             for click in query.clicks:
@@ -36,7 +35,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
     def feature_serps_without_clicks(self, session):
         """
-        rate of serps with clicks
+        session has query without clicks
+        percentage of serps in session with clicks
         """
         has_query_without_clicks = False
         serps_with_clicks = 0
@@ -49,7 +49,10 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
     def feature_avg_time_for_click(self, session):
         """
-        simple statistics of click times
+        minimum time in all serp of first click (-1)
+        maximum time in all serp of first click (-1)
+        average time in all serp of first click (-1)
+        maximum time in all serp of last click (-1)
         """
         first_click_time = []
         last_click_time = []
@@ -69,7 +72,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
     def feature_click_count(self, session):
         """
-        session's click count
+        clicks count in session
         """
         click_count = 0
         for query in session.queries:
@@ -78,13 +81,14 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
     def feature_queries_count(self, session):
         """
-        session's queries count
+        queries count in session
         """
         return len(session.queries)
 
     def feature_avg_time_between_event(self, session):
         """
-        statistics of click times
+        average time of all click times in serps (-1)
+        average time of average click times in serps (-1)
         """
         click_times = []
         click_times_in_query = []
@@ -105,7 +109,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
     def feature_avg_time_between_click_to_click(self, session):
         """
-        statistics of click times
+        average dweltime between all clicks (-1)
+        average of average dweltimes between all clicks in serps (-1)
         """
         click_times = []
         click_times_in_query = []
@@ -127,22 +132,35 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
     def feature_avg_time_between_click_to_query(self, session):
         """
-        statistics of click times
+        sum of times between query and last click
+        sum of squares of times between query and last click
+        mean of times between query and last click
+        variance of times between query and last click
         """
-        sum_1 = 0
-        sum_2 = 0
+        sum = 0
+        sum_sqr = 0
         old_time = 0
         for query in session.queries:
-            sum_1 += query.time_passed - old_time
-            sum_2 += (query.time_passed - old_time) * (query.time_passed - old_time)
+            sum += query.time_passed - old_time
+            sum_sqr += (query.time_passed - old_time) * (query.time_passed - old_time)
             for click in query.clicks:
                 old_time = click.time_passed
-
-        return [sum_1, sum_2]
+        X = 1.0 * sum / len(session.queries)
+        X_2 = 1.0 * sum_sqr / len(session.queries)
+        return [sum, sum_sqr, X, X_2 - X ** 2]
 
     def feature_click_on_urls(self, session):
         """
-        click_on_urls
+        clicks count on 1-position
+        clicks count on 2-position
+        clicks count on 3-position
+        clicks count on 4-position
+        clicks count on 5-position
+        clicks count on 6-position
+        clicks count on 7-position
+        clicks count on 8-position
+        clicks count on 9-position
+        clicks count on 10-position
         """
         click_on_urls_with_number = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         for query in session.queries:
@@ -152,26 +170,19 @@ class SessionFeatureCalcer(FeaturesCalcer):
 
     def feature_avg_click_on_urls(self, session):
         """
-        avg_click_on_urls
+        mean of clicks position (10)
+        variance of clicks position (10000)
         """
         click_avg_on_urls = []
         for query in session.queries:
             for click in query.clicks:
                 click_avg_on_urls.append(query.urls.index(click.url_id))
         if len(click_avg_on_urls):
-            result = 1.0 * sum(click_avg_on_urls) / len(click_avg_on_urls)
+            X = 1.0 * sum(click_avg_on_urls) / len(click_avg_on_urls)
+            X_2 = 1.0 * sum([x ** 2 for x in click_avg_on_urls]) / len(click_avg_on_urls)
+            return X, X_2 - X ** 2
         else:
-            result = 11
-        return result
-
-    def feature_first_query_id(self, session):
-        """
-        session user id
-        """
-        if len(session.queries):
-            return session.queries[0].query_id
-        else:
-            return 0
+            return 10, 10000
 
     def feature_session_duration(self, session):
         """

@@ -46,7 +46,7 @@ def main():
     }
 
     _logger.info("Calcing Statistics")
-    calc_script(statistic_files["statistics_top_clicked_100_urls"], "statistics_top_clicked_urls.py", train_file, ["3 100 0.99985"])
+    calc_script(statistic_files["statistics_top_clicked_100_urls"], "statistics_top_clicked_urls.py", train_file, ["5 150 0.99985"])
     calc_script(statistic_files["user_statistics"], "statistics_user_info.py", train_file)
 
     features_groups = {

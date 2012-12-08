@@ -6,6 +6,9 @@ class UrlFeatureCalcer(FeaturesCalcer):
         self.urls = urls
 
     def feature_urls_in_session(self, session):
+        """
+        urls count that were shown in session
+        """
         urls_showed = set()
         for query in session.queries:
             for url in query.urls:
@@ -13,7 +16,10 @@ class UrlFeatureCalcer(FeaturesCalcer):
                     urls_showed.add(url)
         return len(urls_showed)
 
-    def feature_crt_for_urls(self, session):
+    def feature_ctr_for_urls(self, session):
+        """
+        average ctr for urls from list (0)
+        """
         shows = {}
         clicks = {}
         for url in self.urls:
@@ -35,6 +41,11 @@ class UrlFeatureCalcer(FeaturesCalcer):
         return [1.0 * sum(ctrs) / len(ctrs)] if len(ctrs) else [0]
 
     def feature_click_time_for_urls(self, session):
+        """
+        minimum of time clicking url from list (1000000)
+        maximum of time clicking url from list (1000000)
+        average of time clicking urls from list (1000000)
+        """
         time = {}
         for url in self.urls:
             time[url] = -1
