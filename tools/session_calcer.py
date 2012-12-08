@@ -233,6 +233,49 @@ class SessionFeatureCalcer(FeaturesCalcer):
                 ctrs[i] = 0
         return ctrs
 
+    def feature_inverse_count(self, session):
+        """
+        percentage of queries with inverse clicks
+        percentage of queries with inverse clicks in top3
+        """
+        inverses = 0
+        inverses_in_top3 = 0
+        for query in session.queries:
+            positions = []
+            for click in query.clicks:
+                positions.append(query.urls.index(click.url_id))
+            has_inverse = False
+            has_inverse_in_top3 = False
+            for i in xrange(1, len(positions)):
+                if positions[i] < positions[i - 1]:
+                    has_inverse = True
+                    if i < 3:
+                        has_inverse_in_top3 = True
+            inverses += int(has_inverse)
+            inverses_in_top3 += int(has_inverse_in_top3)
+        return [1.0 * inverses / len(session.queries), 1.0 * inverses_in_top3 / len(session.queries)]
+
+    def feature_queries_wo_clicks_in_top(self, session):
+        """
+        percentage of queries without clicks in top1
+        percentage of queries without clicks in top2
+        percentage of queries without clicks in top3
+        percentage of queries without clicks in top4
+        percentage of queries without clicks in top5
+        """
+        result = [0] * 5
+        for query in session.queries:
+            has_click_in_top = [False] * len(result)
+            for click in query.clicks:
+                position = query.urls.index(click.url_id)
+                for i in xrange(min(position + 1, len(result))):
+                    has_click_in_top[i] = True
+            for i in xrange(len(has_click_in_top)):
+                if not has_click_in_top[i]:
+                    result[i] += 1
+        return [1.0 * x / len(session.queries) for x in result]
+
+
     def feature_avg_click_on_urls(self, session):
         """
         mean of clicks position (10)
