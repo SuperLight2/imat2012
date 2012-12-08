@@ -201,6 +201,38 @@ class SessionFeatureCalcer(FeaturesCalcer):
                 click_on_urls_with_number[query.urls.index(click.url_id)] += 1
         return click_on_urls_with_number
 
+    def feature_session_ctrs(self, session):
+        """
+        session_ctr_on_url_1 (0)
+        session_ctr_on_url_2 (0)
+        session_ctr_on_url_3 (0)
+        session_ctr_on_url_4 (0)
+        session_ctr_on_url_5 (0)
+        session_ctr_on_url_6 (0)
+        session_ctr_on_url_7 (0)
+        session_ctr_on_url_8 (0)
+        session_ctr_on_url_9 (0)
+        session_ctr_on_url_10 (0)
+        """
+        ctrs_length = 10
+        clicks = [0] * ctrs_length
+        shows = [0] * ctrs_length
+        for query in session.queries:
+            has_click = [False] * min(ctrs_length, len(query.urls))
+            for click in query.clicks:
+                has_click[query.urls.index(click.url_id)] = True
+            for index in xrange(len(has_click)):
+                if has_click[index]:
+                    clicks[index] += 1
+                shows[index] += 1
+        ctrs = [0] * ctrs_length
+        for i in xrange(ctrs_length):
+            if shows[i]:
+                ctrs[i] = 1.0 * clicks[i] / shows[i]
+            else:
+                ctrs[i] = 0
+        return ctrs
+
     def feature_avg_click_on_urls(self, session):
         """
         mean of clicks position (10)
