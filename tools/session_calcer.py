@@ -73,11 +73,18 @@ class SessionFeatureCalcer(FeaturesCalcer):
     def feature_click_count(self, session):
         """
         clicks count in session
+        percentage of clicks under top3
+        clicks / queries
         """
         click_count = 0
+        clicks_under_top3 = 0
         for query in session.queries:
             click_count += len(query.clicks)
-        return click_count
+            top3_urls = query.urls[0:3]
+            for click in query.clicks:
+                if click.url_id not in top3_urls:
+                    clicks_under_top3 += 1
+        return [click_count, 1.0 * clicks_under_top3 / (click_count + 0.0001), 1.0 * click_count / len(session.queries)]
 
     def feature_queries_count(self, session):
         """
@@ -295,6 +302,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
     def feature_avg_click_on_urls(self, session):
         """
         mean of clicks position (10)
+        harmonic mean of clicks position (10)
         variance of clicks position (10000)
         """
         click_avg_on_urls = []
@@ -303,10 +311,11 @@ class SessionFeatureCalcer(FeaturesCalcer):
                 click_avg_on_urls.append(query.urls.index(click.url_id))
         if len(click_avg_on_urls):
             X = 1.0 * sum(click_avg_on_urls) / len(click_avg_on_urls)
+            X_1 = 1.0 * len(click_avg_on_urls) / sum(1.0 / (x + 0.0001) for x in click_avg_on_urls)
             X_2 = 1.0 * sum([x ** 2 for x in click_avg_on_urls]) / len(click_avg_on_urls)
-            return [X, X_2 - X ** 2]
+            return [X, X_1, X_2 - X ** 2]
         else:
-            return [10, 10000]
+            return [10, 10, 10000]
 
     def feature_session_duration(self, session):
         """
