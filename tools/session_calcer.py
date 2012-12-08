@@ -76,6 +76,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
         percentage of clicks under top3
         clicks / queries
         percentage of serps with less than 10 urls
+        last query clicks count
         """
         click_count = 0
         clicks_under_top3 = 0
@@ -89,7 +90,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
                 if click.url_id not in top3_urls:
                     clicks_under_top3 += 1
         return [click_count, 1.0 * clicks_under_top3 / (click_count + 0.0001),
-                1.0 * click_count / len(session.queries), 1.0 * poor_serps / len(session.queries)]
+                1.0 * click_count / len(session.queries), 1.0 * poor_serps / len(session.queries),
+                len(session.queries[-1].clicks)]
 
     def feature_queries_count(self, session):
         """
