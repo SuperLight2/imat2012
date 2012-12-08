@@ -16,7 +16,6 @@ class UserInfo(object):
         self.ctr_clicks = [0] * self.ctr_length
         self.ctr_shows = [0] * self.ctr_length
 
-
     def add(self, session):
         self.sessions += 1
         if session.has_switch():
@@ -66,7 +65,6 @@ def main():
         users_info[user_id].add(session)
     for user, user_info in users_info.iteritems():
         user_info.flush()
-
 
 if __name__ == '__main__':
     main()

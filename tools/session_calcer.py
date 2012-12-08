@@ -65,7 +65,8 @@ class SessionFeatureCalcer(FeaturesCalcer):
                 first_click_time.append(min(click_times))
                 last_click_time.append(max(click_times))
         if len(first_click_time):
-            result = [min(first_click_time), max(first_click_time), 1.0 * sum(first_click_time) / len(first_click_time), max(last_click_time)]
+            result = [min(first_click_time), max(first_click_time),
+                      1.0 * sum(first_click_time) / len(first_click_time), max(last_click_time)]
         else:
             result = [-1] * 4
         return result
@@ -209,7 +210,7 @@ class SessionFeatureCalcer(FeaturesCalcer):
         clicks count on 9-position
         clicks count on 10-position
         """
-        click_on_urls_with_number = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        click_on_urls_with_number = [0] * 10
         for query in session.queries:
             for click in query.clicks:
                 click_on_urls_with_number[query.urls.index(click.url_id)] += 1
