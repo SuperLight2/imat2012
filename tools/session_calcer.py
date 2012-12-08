@@ -75,16 +75,21 @@ class SessionFeatureCalcer(FeaturesCalcer):
         clicks count in session
         percentage of clicks under top3
         clicks / queries
+        percentage of serps with less than 10 urls
         """
         click_count = 0
         clicks_under_top3 = 0
+        poor_serps = 0
         for query in session.queries:
             click_count += len(query.clicks)
             top3_urls = query.urls[0:3]
+            if len(query.urls) < 10:
+                poor_serps += 1
             for click in query.clicks:
                 if click.url_id not in top3_urls:
                     clicks_under_top3 += 1
-        return [click_count, 1.0 * clicks_under_top3 / (click_count + 0.0001), 1.0 * click_count / len(session.queries)]
+        return [click_count, 1.0 * clicks_under_top3 / (click_count + 0.0001),
+                1.0 * click_count / len(session.queries), 1.0 * poor_serps / len(session.queries)]
 
     def feature_queries_count(self, session):
         """
@@ -361,3 +366,12 @@ class SessionFeatureCalcer(FeaturesCalcer):
         T_1 = 1.0 * len(times) / sum(1.0 / (x + 0.0001) for x in times)
         return [positions[0], times[0], X, X_1, T, T_1]
 
+    def feature_uniq_click(self, session):
+        """
+        percentage of queries with unique click on first position
+        """
+        result = 0
+        for query in session.queries:
+            if (len(query.clicks) == 1) and (query.clicks[0].url_id == query.urls[0]):
+                result += 1
+        return 1.0 * result / len(session.queries)
