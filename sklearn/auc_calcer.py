@@ -15,3 +15,4 @@ def calc_auc(answers):
         else:
             tpr += 1.0 / class_plus
     return auc
+

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dolbilka.py" afterPath="$PROJECT_DIR$/dolbilka.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/features_calcer.py" afterPath="$PROJECT_DIR$/tools/features_calcer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/ml_tools.py" afterPath="$PROJECT_DIR$/tools/ml_tools.py" />
     </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,28 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statistics_top_clicked_urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/statistics_top_clicked_urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="70" selection-start="194" selection-end="226" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="session_calcer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/session_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="187" column="11" selection-start="6905" selection-end="6905" vertical-scroll-proportion="-9.16">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="session.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/session.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="188" column="29" selection-start="6914" selection-end="6935" vertical-scroll-proportion="-9.84">
               <folding />
             </state>
           </provider>
@@ -64,7 +45,7 @@
       <file leaf-file-name="url_calcer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/url_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="24" selection-start="1479" selection-end="1479" vertical-scroll-proportion="0.0">
+            <state line="46" column="57" selection-start="1349" selection-end="1512" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -73,16 +54,34 @@
       <file leaf-file-name="user_calcer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/user_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="44" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
+            <state line="16" column="0" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="features_users_info.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features_users_info.py">
+      <file leaf-file-name="auc_calcer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sklearn/auc_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+            <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="-8.16">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ml_tools.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/ml_tools.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sk_trainer.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="12" selection-start="75" selection-end="80" vertical-scroll-proportion="0.16966067">
               <folding />
             </state>
           </provider>
@@ -106,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="features_calcer.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="features_calcer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/features_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="16" selection-start="809" selection-end="809" vertical-scroll-proportion="0.5361781">
+            <state line="26" column="16" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -130,22 +129,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/features_top_urls.py" />
-        <option value="$PROJECT_DIR$/vw/vw.py" />
         <option value="$PROJECT_DIR$/vw/vw_file_creater.py" />
         <option value="$PROJECT_DIR$/vw/vw_bagging.py" />
         <option value="$PROJECT_DIR$/features_users_info.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/auc_calcer.py" />
-        <option value="$PROJECT_DIR$/tools/ml_tools.py" />
         <option value="$PROJECT_DIR$/calc_auc.py" />
         <option value="$PROJECT_DIR$/tools/id_and_switch_calcer.py" />
-        <option value="$PROJECT_DIR$/tools/session_calcer.py" />
         <option value="$PROJECT_DIR$/tools/url_calcer.py" />
         <option value="$PROJECT_DIR$/statistics_user_info.py" />
         <option value="$PROJECT_DIR$/tools/user_calcer.py" />
         <option value="$PROJECT_DIR$/dolbilka.py" />
         <option value="$PROJECT_DIR$/tools/features_calcer.py" />
+        <option value="$PROJECT_DIR$/tools/session_calcer.py" />
+        <option value="$PROJECT_DIR$/sklearn/auc_calcer.py" />
+        <option value="$PROJECT_DIR$/tools/ml_tools.py" />
+        <option value="$PROJECT_DIR$/sklearn/sk_trainer.py" />
       </list>
     </option>
   </component>
@@ -211,6 +210,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imat2012" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imat2012" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sklearn" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -423,20 +436,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/features_id_and_switch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="67" selection-start="679" selection-end="692" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features_session_general.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="81" selection-start="793" selection-end="826" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/session_reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -458,30 +457,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/ml_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/session_calcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="187" column="11" selection-start="6905" selection-end="6905" vertical-scroll-proportion="-9.16">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/url_calcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="24" selection-start="1479" selection-end="1479" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -496,13 +474,6 @@
     <entry file="file://$PROJECT_DIR$/statistics_top_clicked_urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="70" selection-start="194" selection-end="226" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/user_calcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="44" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -532,10 +503,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/features_calcer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="16" selection-start="809" selection-end="809" vertical-scroll-proportion="0.5361781">
+        <state line="26" column="16" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/session_calcer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="188" column="29" selection-start="6914" selection-end="6935" vertical-scroll-proportion="-9.84">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/url_calcer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="57" selection-start="1349" selection-end="1512" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/user_calcer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sklearn/auc_calcer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="-8.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/ml_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="12" selection-start="75" selection-end="80" vertical-scroll-proportion="0.16966067">
+          <folding />
         </state>
       </provider>
     </entry>
