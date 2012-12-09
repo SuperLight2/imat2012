@@ -1,10 +1,29 @@
 import sys
 
-def main():
-    files_to_combine = sys.argv[1:]
-    result = {}
+def try_to_float(s):
+    try:
+        value = float(s)
+    except ValueError:
+        return False, 0
+    return True, value
 
-    for filepath in files_to_combine:
+def main():
+    files_to_combine = []
+    weights = []
+
+    current_weight = 1.0
+    for i in sys.argv[1:]:
+        is_float, value = try_to_float(sys.argv[i])
+        if not is_float:
+            files_to_combine.append(sys.argv[i])
+            weights.append(current_weight)
+            current_weight = 1.0
+        else:
+            current_weight = value
+
+    result = {}
+    for index in xrange(len(files_to_combine)):
+        filepath = files_to_combine[index]
         maximum = None
         minimum = None
         for line in open(filepath):
@@ -20,10 +39,11 @@ def main():
             value = float(line.strip())
             if index not in result:
                 result[index] = 0
-            result[index] += 1.0 * (value - minimum) / (maximum - minimum)
+            result[index] += weights[index] * (value - minimum) / (maximum - minimum)
 
+    sum_weights = sum(weights)
     for index in result:
-        print result[index] / len(files_to_combine)
+        print result[index] / sum_weights
 
 if __name__ == '__main__':
     main()
