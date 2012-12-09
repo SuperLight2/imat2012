@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calc_auc.py" afterPath="$PROJECT_DIR$/calc_auc.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prediction_combiner.py" afterPath="$PROJECT_DIR$/prediction_combiner.py" />
+      <change type="DELETED" beforePath="C:\studing\СпецСеминар\switch_detect\github\imat2012\sklearn\sk_trainer_with_bagging.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,21 +23,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="features_users_info.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features_users_info.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#23#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sk_trainer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="32" selection-start="2285" selection-end="2285" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
               </folding>
@@ -54,13 +43,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calc_auc.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="calc_auc.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calc_auc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.9369202">
+            <state line="38" column="0" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auc_calcer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sklearn/auc_calcer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,22 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="features_top_urls.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="features_top_urls.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/features_top_urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="164" selection-end="471" vertical-scroll-proportion="0.0">
+            <state line="29" column="13" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.8200371">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sk_trainer_with_bagging.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer_with_bagging.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="801" selection-end="1177" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#23#33#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -454,13 +441,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sklearn/auc_calcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/session_calcer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="216" column="40" selection-start="8259" selection-end="8259" vertical-scroll-proportion="95.04">
@@ -507,36 +487,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features_top_urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="164" selection-end="471" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vw/vw_bagging.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="18" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer_with_bagging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="801" selection-end="1177" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#23#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="32" selection-start="2285" selection-end="2285" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#23#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -566,10 +521,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calc_auc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.9369202">
+        <state line="38" column="0" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#23#56#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sklearn/auc_calcer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#23#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features_top_urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="13" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.8200371">
+          <folding />
         </state>
       </provider>
     </entry>
