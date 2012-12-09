@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys
+from optparse import OptionParser
 import sklearn
 import scipy as sp
 import numpy as np
@@ -25,11 +25,37 @@ def calc_auc_on_prediction(prediction, answer):
         sub_result.append((prediction[i][1], answer[i]))
     return calc_auc([y[1] for y in sorted(sub_result, key=lambda x: -x[0])])
 
+def add_to_result(model, X, result):
+    Y = model.predict_proba(X)
+    index = 0
+    for prediction in Y:
+        index += 1
+        if index not in result:
+            result[index] = None
+        if result[index] is None:
+            result[index] = prediction
+        else:
+            for j in xrange(len(result[index])):
+                result[index][j] += prediction[j]
+
 def main():
-    train_file = sys.argv[1]
-    test_file = sys.argv[2]
-    train_result_file = sys.argv[3]
-    test_result_file = sys.argv[4]
+    optparser = OptionParser(usage="""
+            %prog [OPTIONS] TRAIN_FILE TEST_FILE""")
+    optparser.add_option('-b', '--bagging', dest='bagging_iterations',
+        type='int', default=None,
+        help='use bagging with iterations count.')
+    optparser.add_option('-f', '--fraction', dest='fraction',
+        type='float', default=1.0,
+        help='sift learn pool with fraction probability')
+    optparser.add_option('-i', '--iterations', dest='iterations',
+        type='int', default=20,
+        help='build iterations trees in one forest')
+    opts, args = optparser.parse_args()
+
+    train_file = args[0]
+    test_file = args[1]
+    train_result_file = args[2]
+    test_result_file = args[3]
 
     _X_learn = []
     _Y_learn = []
@@ -50,25 +76,61 @@ def main():
     Y_learn = np.array(_Y_learn)
     X_test = np.array(_X_test)
 
-    print "Training"
     #model = RandomForestClassifier(n_estimators = 15, max_depth = 7, verbose = 0, n_jobs = 5)
-    model = GradientBoostingClassifier(n_estimators = 100, learn_rate=0.1, subsample = 0.8, max_depth = 6)
-    model.fit(X_learn, Y_learn)
+    model = GradientBoostingClassifier(n_estimators = opts.iterations, learn_rate=0.1, subsample = 0.8, max_depth = 6)
 
-    print "Learn Predicting"
-    Y_prediction_on_learn = model.predict_proba(X_learn)
-    print "Error on learn:\t", Error(Y_prediction_on_learn, Y_learn)
-    print "Current AUC:\t", calc_auc_on_prediction(Y_prediction_on_learn, Y_learn)
+    result_on_test = {}
+    result_on_learn = {}
+
+    if opts.bagging_iterations is None:
+        opts.bagging_iterations = 1
+
+        print "Training"
+        model.fit(X_learn, Y_learn)
+
+        print "Learn predicting"
+        add_to_result(model, X_learn, result_on_learn)
+        print "Test predicting"
+        add_to_result(model, X_test, result_on_test)
+
+        print "Error on learn:\t", Error(result_on_learn, Y_learn)
+        print "Current AUC:\t", calc_auc_on_prediction(result_on_learn, Y_learn)
+    else:
+        error = 0
+        rs = ShuffleSplit(len(Y_learn), n_iterations=opts.bagging_iterations, test_size=0.8, random_state=1)
+
+        iteration = 0
+        for train_index, test_index in rs:
+            iteration += 1
+            X_sub_learn, X_validate, Y_sub_learn, Y_validate = [0] * 4
+            X_sub_learn, X_validate, Y_sub_learn, Y_validate = X_learn[train_index], X_learn[test_index], Y_learn[train_index], Y_learn[test_index]
+
+            print "Training"
+            model.fit(X_sub_learn, Y_sub_learn)
+
+            print "Predicting"
+            Y_prediction_on_validate = model.predict_proba(X_validate)
+            current_error = Error(Y_prediction_on_validate, Y_validate)
+            error += current_error
+            print "Current error:\t", current_error
+            print "Current AUC:\t", calc_auc_on_prediction(Y_prediction_on_validate, Y_validate)
+
+            print "Learn predicting"
+            add_to_result(model, X_learn, result_on_learn)
+            print "Test predicting"
+            add_to_result(model, X_test, result_on_test)
+
+        error /= opts.bagging_iterations
+        print "Error on cross-validation:\t", error
+
     f_out = open(train_result_file, "w")
-    for prediction in Y_prediction_on_learn:
-        print >> f_out, prediction[1]
+    for prediction in result_on_learn:
+        print >> f_out, prediction[1] / opts.bagging_iterations
     f_out.close()
 
-    print "Test predicting"
-    Y_test = model.predict_proba(X_test)
     f_out = open(test_result_file, "w")
-    for prediction in Y_test:
-        print >> f_out, prediction[1]
+    for prediction in result_on_test:
+        print >> f_out, prediction[1] / opts.bagging_iterations
     f_out.close()
 
 

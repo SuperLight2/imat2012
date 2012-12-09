@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="" />
+    <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sklearn/sk_trainer.py" afterPath="$PROJECT_DIR$/sklearn/sk_trainer.py" />
+    </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,15 +22,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="session_calcer.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/session_calcer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="216" column="40" selection-start="8259" selection-end="8259" vertical-scroll-proportion="95.04">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="statistics_user_info.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/statistics_user_info.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -36,24 +29,6 @@
               <folding>
                 <element signature="e#23#33#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="session_reader.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/session_reader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="url_calcer.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/url_calcer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="34" selection-start="1673" selection-end="1673" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -81,10 +56,59 @@
       <file leaf-file-name="sk_trainer.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="28" selection-start="2179" selection-end="2179" vertical-scroll-proportion="0.75510204">
+            <state line="72" column="32" selection-start="2285" selection-end="2285" vertical-scroll-proportion="-1.0038023">
               <folding>
-                <element signature="e#23#33#0" expanded="true" />
+                <element signature="e#23#56#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vw_bagging.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vw/vw_bagging.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="18" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dolbilka.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dolbilka.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="23" selection-end="56" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#23#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="features_id_and_switch.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features_id_and_switch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="features_session_general.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features_session_general.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="features_top_urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features_top_urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="164" selection-end="471" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,28 +116,10 @@
       <file leaf-file-name="sk_trainer_with_bagging.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer_with_bagging.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="24" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.0">
+            <state line="27" column="0" selection-start="801" selection-end="1177" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#23#33#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auc_calcer.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sklearn/auc_calcer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="calc_auc.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calc_auc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="19" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -440,45 +446,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/statistics_top_clicked_urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="70" selection-start="194" selection-end="226" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dolbilka.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="19" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#23#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/features_calcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="30" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/id_and_switch_calcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="15" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/ml_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -546,9 +513,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/features_id_and_switch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features_session_general.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features_top_urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="164" selection-end="471" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dolbilka.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="23" selection-end="56" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#23#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vw/vw_bagging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer_with_bagging.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="24" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.0">
+        <state line="27" column="0" selection-start="801" selection-end="1177" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#23#33#0" expanded="true" />
           </folding>
@@ -557,9 +563,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="28" selection-start="2179" selection-end="2179" vertical-scroll-proportion="0.75510204">
+        <state line="72" column="32" selection-start="2285" selection-end="2285" vertical-scroll-proportion="-1.0038023">
           <folding>
-            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#23#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
