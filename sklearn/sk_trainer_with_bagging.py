@@ -25,13 +25,28 @@ def calc_auc_on_prediction(prediction, answer):
         sub_result.append((prediction[i][1], answer[i]))
     return calc_auc([y[1] for y in sorted(sub_result, key=lambda x: -x[0])])
 
+def add_to_result(model, X, result):
+    Y = model.predict_proba(X)
+    index = 0
+    for prediction in Y:
+        index += 1
+        if index not in result:
+            result[index] = None
+        if result[index] is None:
+            result[index] = prediction
+        else:
+            for j in xrange(len(result[index])):
+                result[index][j] += prediction[j]
+
+
 def main():
     # learn, sub_learn, validate, test
     # files in format: id switch [features]
 
-    result_file = sys.argv[1]
-    train_file = sys.argv[2]
-    test_file = sys.argv[3]
+    train_file = sys.argv[1]
+    test_file = sys.argv[2]
+    train_result_file = sys.argv[3]
+    test_result_file = sys.argv[4]
 
     _X_learn = []
     _Y_learn = []
@@ -52,19 +67,21 @@ def main():
     X_test = np.array(_X_test)
 
     print "Fitting..."
-    bagging_iterations = 3
+    bagging_iterations = 10
     error = 0
     rs = ShuffleSplit(len(Y_learn), n_iterations=bagging_iterations, test_size=0.8, random_state=1)
-    result = {}
+    result_on_test = {}
+    result_on_learn = {}
 
     iteration = 0
     for train_index, test_index in rs:
         iteration += 1
+        X_sub_learn, X_validate, Y_sub_learn, Y_validate = [0] * 4
         X_sub_learn, X_validate, Y_sub_learn, Y_validate = X_learn[train_index], X_learn[test_index], Y_learn[train_index], Y_learn[test_index]
 
         print "Training"
         #model = RandomForestClassifier(n_estimators = 15, max_depth = 7, verbose = 0, n_jobs = 5)
-        model = GradientBoostingClassifier(n_estimators = 2000, learn_rate=0.1, subsample = 0.8, max_depth = 6, max_features=38)
+        model = GradientBoostingClassifier(n_estimators = 200, learn_rate=0.1, subsample = 0.8, max_depth = 6)
         model.fit(X_sub_learn, Y_sub_learn)
 
         print "Predicting"
@@ -74,30 +91,23 @@ def main():
         print "Current error:\t", current_error
         print "Current AUC:\t", calc_auc_on_prediction(Y_prediction_on_validate, Y_validate)
 
+        print "Learn predicting"
+        add_to_result(model, X_learn, result_on_learn)
         print "Test predicting"
-        Y_test = model.predict_proba(X_test)
-        index = 0
-        for prediction in Y_test:
-            index += 1
-            if index not in result:
-                result[index] = None
-            if result[index] is None:
-                result[index] = prediction
-            else:
-                for j in xrange(len(result[index])):
-                    result[index][j] += prediction[j]
-
-        f_tmp_out = open(result_file + str(iteration), "w")
-        for index in result:
-            print >> f_tmp_out, result[index][1] / bagging_iterations
-        f_tmp_out.close()
+        add_to_result(model, X_test, result_on_test)
 
     error /= bagging_iterations
     print "Error on cross-validation:\t", error
 
-    fout = open(result_file, "w")
-    for index in result:
-        print >> fout, result[index][1] / bagging_iterations
+    f_out = open(train_result_file, "w")
+    for index in result_on_learn:
+        print >> f_out, result_on_learn[index][1] / bagging_iterations
+    f_out.close()
+
+    f_out = open(test_result_file, "w")
+    for index in result_on_test:
+        print >> f_out, result_on_test[index][1] / bagging_iterations
+    f_out.close()
 
 if __name__ == '__main__':
     main()
