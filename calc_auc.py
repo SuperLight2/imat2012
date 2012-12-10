@@ -30,8 +30,8 @@ def main():
             right_answer = {}
             for line in open(answer_filepath):
                 s = line.strip().split('\t', 4)
-                session, has_switch = s[0], s[1]
-                right_answer[session] = int(has_switch)
+                session, has_switch = int(s[0]), int(s[1])
+                right_answer[session] = has_switch
             for line in open(args[0]):
                 session_id = int(line.strip())
                 if session_id in right_answer:
