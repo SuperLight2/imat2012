@@ -26,7 +26,6 @@ def main():
             print calc_auc(answers)
     else:
         for answer_filepath in args[1:]:
-            print answer_filepath
             answers = []
             right_answer = {}
             for line in open(answer_filepath):
