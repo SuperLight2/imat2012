@@ -37,7 +37,7 @@ class UserInfo(object):
             clicked_position = [False] * min(self.ctr_length, len(query.urls))
             for click in query.clicks:
                 clicked_position[query.urls.index(click.url_id)] = True
-                self.click_times_sum + click.time_passed
+                self.click_times_sum += click.time_passed
                 self.click_time_query_sum += (click.time_passed - query.time_passed)
             if len(query.clicks):
                 self.first_click_time_query_sum += query.clicks[0].time_passed - query.time_passed
