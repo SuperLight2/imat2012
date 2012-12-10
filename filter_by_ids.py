@@ -5,7 +5,7 @@ import sys
 
 def main():
     optparser = OptionParser(usage="""
-            %prog [OPTIONS] IDS_FILE.
+            %prog [OPTIONS] [IDS_FILES].
             Filter input stream by session_id ids""")
     optparser.add_option('-i', '--inverse', dest='inverse',
         default=False, action='store_true',
@@ -13,8 +13,9 @@ def main():
     opts, args = optparser.parse_args()
 
     ids = set()
-    for line in open(args[0]):
-        ids.add(line.strip())
+    for filepath in args:
+        for line in open(filepath):
+            ids.add(line.strip())
 
     for line in sys.stdin:
         session_id = line.strip().split('\t', 2)[0]

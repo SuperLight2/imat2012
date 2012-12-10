@@ -1,21 +1,28 @@
 #!/usr/bin/env python
 
 from optparse import OptionParser
+import sys
 import sklearn
 import scipy as sp
 import numpy as np
 from sklearn.cross_validation import cross_val_score
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.cross_validation import ShuffleSplit
-import sys
+from sklearn.ensemble import (RandomForestClassifier,
+                              RandomForestRegressor,
+                              GradientBoostingClassifier,
+                              GradientBoostingRegressor,
+                              ExtraTreesRegressor,
+                              ExtraTreesClassifier)
 
-from auc_calcer import calc_auc
+from sklearn.cross_validation import ShuffleSplit
+from sklearn.metrics import auc_score
 
 def calc_auc_on_prediction(probability_prediction, answer):
-    sub_result = []
-    for i in xrange(len(probability_prediction)):
-        sub_result.append((probability_prediction[i], answer[i]))
-    return calc_auc([y[1] for y in sorted(sub_result, key=lambda x: -x[0])])
+    predictions = [value for key, value in probability_prediction.iteritems()]
+    return auc_score(answer, predictions)
+    #sub_result = []
+    #for i in xrange(len(probability_prediction)):
+    #    sub_result.append((probability_prediction[i], answer[i]))
+    #return calc_auc([y[1] for y in sorted(sub_result, key=lambda x: -x[0])])
 
 def add_to_result(model, X, result):
     Y = model.predict_proba(X)
@@ -80,8 +87,12 @@ def main():
     Y_validate = np.array(_Y_validate)
     X_test = np.array(_X_test)
 
-    #model = RandomForestClassifier(n_estimators = 15, max_depth = 7, verbose = 0, n_jobs = 5)
-    model = GradientBoostingClassifier(n_estimators = opts.iterations, learn_rate=0.1, subsample = 0.8, max_depth = 6)
+    #model = RandomForestClassifier(n_estimators=15, max_depth=6, n_jobs=5)
+    #model = RandomForestRegressor(n_estimators=15, max_depth=6, n_jobs=5)
+    #model = ExtraTreesRegressor(n_estimators=opts.iterations, max_depth=6, compute_importances=False, n_jobs=5)
+    #model = ExtraTreesClassifier(n_estimators=opts.iterations, max_depth=6, compute_importances=False, n_jobs=5)
+    #model = GradientBoostingRegressor(loss='ls', n_estimators=opts.iterations, max_depth=6, learning_rate=0.05, subsample=0.8)
+    model = GradientBoostingClassifier(n_estimators=opts.iterations, learning_rate=0.05, subsample=0.8, max_depth=6)
 
     result_on_test = {}
     result_on_learn = {}

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filter_by_ids.py" afterPath="$PROJECT_DIR$/filter_by_ids.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sklearn/sk_trainer.py" afterPath="$PROJECT_DIR$/sklearn/sk_trainer.py" />
     </list>
     <ignored path="imat2012.iws" />
@@ -23,10 +24,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sk_trainer.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sk_trainer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="57" selection-start="4568" selection-end="4568" vertical-scroll-proportion="0.256654">
+            <state line="125" column="24" selection-start="4732" selection-end="4732" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
               </folding>
@@ -34,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter_by_ids.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="filter_by_ids.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/filter_by_ids.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="54" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+            <state line="11" column="28" selection-start="347" selection-end="347" vertical-scroll-proportion="0.27458256">
               <folding />
             </state>
           </provider>
@@ -64,7 +65,7 @@
       <file leaf-file-name="auc_calcer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sklearn/auc_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
+            <state line="2" column="15" selection-start="46" selection-end="57" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -142,15 +143,15 @@
         <option value="$PROJECT_DIR$/sklearn/sk_trainer_with_bagging.py" />
         <option value="$PROJECT_DIR$/prediction_combiner.py" />
         <option value="$PROJECT_DIR$/calc_auc.py" />
-        <option value="$PROJECT_DIR$/filter_by_ids.py" />
         <option value="$PROJECT_DIR$/sklearn/sk_trainer.py" />
+        <option value="$PROJECT_DIR$/filter_by_ids.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -179,6 +180,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -227,16 +229,15 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="http.proxy" />
     <property name="recentsLimit" value="5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.lastSelected" value="http.proxy" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -358,14 +359,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28863636" sideWeight="0.9400685" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29331306" sideWeight="0.9400685" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -509,13 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sklearn/auc_calcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/features_top_urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="13" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
@@ -523,19 +517,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/filter_by_ids.py">
+    <entry file="file://$PROJECT_DIR$/sklearn/auc_calcer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="54" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+        <state line="2" column="15" selection-start="46" selection-end="57" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="57" selection-start="4568" selection-end="4568" vertical-scroll-proportion="0.256654">
+        <state line="125" column="24" selection-start="4732" selection-end="4732" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#23#56#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filter_by_ids.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="28" selection-start="347" selection-end="347" vertical-scroll-proportion="0.27458256">
+          <folding />
         </state>
       </provider>
     </entry>
