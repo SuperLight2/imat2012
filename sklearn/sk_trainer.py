@@ -139,12 +139,12 @@ def main():
 
     f_out = open(train_result_file, "w")
     for prediction in result_on_learn:
-        print >> f_out, prediction[1] / opts.bagging_iterations
+        print >> f_out, prediction / opts.bagging_iterations
     f_out.close()
 
     f_out = open(test_result_file, "w")
     for prediction in result_on_test:
-        print >> f_out, prediction[1] / opts.bagging_iterations
+        print >> f_out, prediction / opts.bagging_iterations
     f_out.close()
 
 
