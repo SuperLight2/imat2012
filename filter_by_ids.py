@@ -17,7 +17,7 @@ def main():
         ids.add(line.strip())
 
     for line in sys.stdin:
-        session_id = line.strip().split('\t', 2)
+        session_id = line.strip().split('\t', 2)[0]
         if (not opts.inverse) and (session_id in ids):
             continue
         if opts.inverse and (session_id not in ids):
