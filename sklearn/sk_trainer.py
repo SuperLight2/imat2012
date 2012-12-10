@@ -19,7 +19,7 @@ def calc_auc_on_prediction(probability_prediction, answer):
 
 def add_to_result(model, X, result):
     Y = model.predict_proba(X)
-    index = 0
+    index = -1
     for prediction in Y:
         index += 1
         if index not in result:
@@ -70,6 +70,7 @@ def main():
         print >> sys.stderr, "Reading Validate..."
         for line in open(opts.validate_set):
             rows = line.strip().split('\t')
+            _Y_validate.append(int(rows[1]))
             _X_validate.append(rows[2:])
 
 
@@ -94,16 +95,14 @@ def main():
 
         print >> sys.stderr, "Learn predicting"
         add_to_result(model, X_learn, result_on_learn)
-
-        if opts.validate_set is not None:
-            print >> sys.stderr, "Validate predicting"
-            add_to_result(model, X_validate, result_on_validate)
+        print >> sys.stderr, "AUC on learn:\t", calc_auc_on_prediction(result_on_learn, Y_learn)
 
         print >> sys.stderr, "Test predicting"
         add_to_result(model, X_test, result_on_test)
 
-        print >> sys.stderr, "AUC on learn:\t", calc_auc_on_prediction(result_on_learn, Y_learn)
         if opts.validate_set is not None:
+            print >> sys.stderr, "Validate predicting"
+            add_to_result(model, X_validate, result_on_validate)
             print >> sys.stderr, "AUC on validate:\t", calc_auc_on_prediction(result_on_validate, Y_validate)
     else:
         error = 0
@@ -126,16 +125,14 @@ def main():
             print >> sys.stderr, "Learn predicting"
             add_to_result(model, X_learn, result_on_learn)
 
-            if opts.validate_set is not None:
-                print >> sys.stderr, "Validate predicting"
-                add_to_result(model, X_validate, result_on_validate)
-
-            print >> sys.stderr, "Test predicting"
-            add_to_result(model, X_test, result_on_test)
-
+            print >> sys.stderr, "Validate predicting"
+            add_to_result(model, X_validate, result_on_validate)
             current_error = calc_auc_on_prediction(result_on_validate, Y_validate)
             error += current_error
             print >> sys.stderr, "Current AUC on validate:\t", current_error
+
+            print >> sys.stderr, "Test predicting"
+            add_to_result(model, X_test, result_on_test)
 
         error /= opts.bagging_iterations
         print >> sys.stderr, "Error on cross-validation:\t", error
