@@ -26,10 +26,12 @@ def main():
             print calc_auc(answers)
     else:
         for answer_filepath in args[1:]:
+            print answer_filepath
             answers = []
             right_answer = {}
             for line in open(answer_filepath):
-                session, has_switch = line.strip().split('\t')
+                s = line.strip().split('\t', 4)
+                session, has_switch = s[0], s[1]
                 right_answer[session] = int(has_switch)
             for line in open(args[0]):
                 session_id = int(line.strip())
