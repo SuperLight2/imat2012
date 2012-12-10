@@ -25,7 +25,7 @@
       <file leaf-file-name="sk_trainer.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="35" selection-start="2575" selection-end="2575" vertical-scroll-proportion="2.4562738">
+            <state line="105" column="14" selection-start="3510" selection-end="3510" vertical-scroll-proportion="0.15969582">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
               </folding>
@@ -535,7 +535,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="35" selection-start="2575" selection-end="2575" vertical-scroll-proportion="2.4562738">
+        <state line="105" column="14" selection-start="3510" selection-end="3510" vertical-scroll-proportion="0.15969582">
           <folding>
             <element signature="e#23#56#0" expanded="true" />
           </folding>

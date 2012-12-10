@@ -38,9 +38,9 @@ def main():
     optparser.add_option('-i', '--iterations', dest='iterations',
         type='int', default=20,
         help='build iterations trees in one forest')
-    optparser.add_option('-v', '--validate', dest='iterations',
-        type='int', default=20,
-        help='build iterations trees in one forest')
+    optparser.add_option('-v', '--validate', dest='validate_set',
+        type='string', default=None,
+        help='use validate set for auc calculation')
     opts, args = optparser.parse_args()
 
     train_file = args[0]
@@ -50,6 +50,9 @@ def main():
 
     _X_learn = []
     _Y_learn = []
+    _X_validate = []
+    _Y_validate = []
+
     _X_test = []
 
     print >> sys.stderr, "Reading Learn..."
@@ -63,8 +66,17 @@ def main():
         rows = line.strip().split('\t')
         _X_test.append(rows[2:])
 
+    if opts.validate_set is not None:
+        print >> sys.stderr, "Reading Validate..."
+        for line in open(opts.validate_set):
+            rows = line.strip().split('\t')
+            _X_validate.append(rows[2:])
+
+
     X_learn = np.array(_X_learn)
     Y_learn = np.array(_Y_learn)
+    X_validate = np.array(_X_validate)
+    Y_validate = np.array(_Y_validate)
     X_test = np.array(_X_test)
 
     #model = RandomForestClassifier(n_estimators = 15, max_depth = 7, verbose = 0, n_jobs = 5)
@@ -72,6 +84,7 @@ def main():
 
     result_on_test = {}
     result_on_learn = {}
+    result_on_validate = {}
 
     if opts.bagging_iterations is None:
         opts.bagging_iterations = 1
@@ -81,10 +94,17 @@ def main():
 
         print >> sys.stderr, "Learn predicting"
         add_to_result(model, X_learn, result_on_learn)
+
+        if opts.validate_set is not None:
+            print >> sys.stderr, "Validate predicting"
+            add_to_result(model, X_validate, result_on_validate)
+
         print >> sys.stderr, "Test predicting"
         add_to_result(model, X_test, result_on_test)
 
         print >> sys.stderr, "AUC on learn:\t", calc_auc_on_prediction(result_on_learn, Y_learn)
+        if opts.validate_set is not None:
+            print >> sys.stderr, "AUC on validate:\t", calc_auc_on_prediction(result_on_validate, Y_validate)
     else:
         error = 0
         rs = ShuffleSplit(len(Y_learn), n_iterations=opts.bagging_iterations, test_size=0.8, random_state=1)
@@ -92,18 +112,28 @@ def main():
         iteration = 0
         for train_index, test_index in rs:
             iteration += 1
-            X_sub_learn, X_validate, Y_sub_learn, Y_validate = [0] * 4
-            X_sub_learn, X_validate, Y_sub_learn, Y_validate = X_learn[train_index], X_learn[test_index], Y_learn[train_index], Y_learn[test_index]
+            if opts.validate_set is None:
+                X_sub_learn, X_validate, Y_sub_learn, Y_validate = [0] * 4
+                X_sub_learn, X_validate, Y_sub_learn, Y_validate = X_learn[train_index], X_learn[test_index], Y_learn[train_index], Y_learn[test_index]
+            else:
+                X_sub_learn, Y_sub_learn = [0] * 2
+                X_sub_learn, Y_sub_learn = X_learn[train_index], Y_learn[train_index]
+
 
             print >> sys.stderr, "Training"
             model.fit(X_sub_learn, Y_sub_learn)
 
-            print >> sys.stderr, "Validate predicting"
-            add_to_result(model, X_validate, result_on_learn)
+            print >> sys.stderr, "Learn predicting"
+            add_to_result(model, X_learn, result_on_learn)
+
+            if opts.validate_set is not None:
+                print >> sys.stderr, "Validate predicting"
+                add_to_result(model, X_validate, result_on_validate)
+
             print >> sys.stderr, "Test predicting"
             add_to_result(model, X_test, result_on_test)
 
-            current_error = calc_auc_on_prediction(result_on_learn, Y_validate)
+            current_error = calc_auc_on_prediction(result_on_validate, Y_validate)
             error += current_error
             print >> sys.stderr, "Current AUC on validate:\t", current_error
 
