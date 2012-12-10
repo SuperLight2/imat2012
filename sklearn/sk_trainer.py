@@ -124,6 +124,7 @@ def main():
 
             print >> sys.stderr, "Learn predicting"
             add_to_result(model, X_learn, result_on_learn)
+            print >> sys.stderr, "Current AUC on validate:\t", calc_auc_on_prediction(result_on_learn, Y_learn)
 
             print >> sys.stderr, "Validate predicting"
             add_to_result(model, X_validate, result_on_validate)
