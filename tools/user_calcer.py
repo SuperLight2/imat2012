@@ -11,7 +11,13 @@ class UserFeatureCalcer(FeaturesCalcer):
         user`s percentage of sessions with switch
         user`s percentage of sessions without clicks
         user`s clicks count
+        user`s switch count
+        user`s switch count / queries count
         user`s average clicks count on query
+        user`s average switch time
+        user`s average click time
+        user`s average click time in query
+        user`s average first click time in query
         user`s ctr1
         user`s ctr2
         user`s ctr3
