@@ -10,19 +10,10 @@ from sklearn.cross_validation import ShuffleSplit
 
 from auc_calcer import calc_auc
 
-def Error(prediction, answer):
-    error = 0
-    for i in xrange(len(prediction)):
-        result = 0
-        if prediction[i][1] > prediction[i][0]:
-            result = 1
-        error += abs(result - answer[i])
-    return 1.0 * error / len(prediction)
-
-def calc_auc_on_prediction(prediction, answer):
+def calc_auc_on_prediction(probability_prediction, answer):
     sub_result = []
-    for i in xrange(len(prediction)):
-        sub_result.append((prediction[i][1], answer[i]))
+    for i in xrange(len(probability_prediction)):
+        sub_result.append((probability_prediction[i], answer[i]))
     return calc_auc([y[1] for y in sorted(sub_result, key=lambda x: -x[0])])
 
 def add_to_result(model, X, result):
@@ -40,7 +31,7 @@ def add_to_result(model, X, result):
 
 def main():
     optparser = OptionParser(usage="""
-            %prog [OPTIONS] TRAIN_FILE TEST_FILE""")
+            %prog [OPTIONS] TRAIN_FILE TEST_FILE TRAIN_PREDICTION TEST_PREDICTION""")
     optparser.add_option('-b', '--bagging', dest='bagging_iterations',
         type='int', default=None,
         help='use bagging with iterations count.')
@@ -93,8 +84,7 @@ def main():
         print "Test predicting"
         add_to_result(model, X_test, result_on_test)
 
-        print "Error on learn:\t", Error(result_on_learn, Y_learn)
-        print "Current AUC:\t", calc_auc_on_prediction(result_on_learn, Y_learn)
+        print "AUC on learn:\t", calc_auc_on_prediction(result_on_learn, Y_learn)
     else:
         error = 0
         rs = ShuffleSplit(len(Y_learn), n_iterations=opts.bagging_iterations, test_size=0.8, random_state=1)
@@ -108,17 +98,14 @@ def main():
             print "Training"
             model.fit(X_sub_learn, Y_sub_learn)
 
-            print "Predicting"
-            Y_prediction_on_validate = model.predict_proba(X_validate)
-            current_error = Error(Y_prediction_on_validate, Y_validate)
-            error += current_error
-            print "Current error:\t", current_error
-            print "Current AUC:\t", calc_auc_on_prediction(Y_prediction_on_validate, Y_validate)
-
-            print "Learn predicting"
-            add_to_result(model, X_learn, result_on_learn)
+            print "Validate predicting"
+            add_to_result(model, X_validate, result_on_learn)
             print "Test predicting"
             add_to_result(model, X_test, result_on_test)
+
+            current_error = calc_auc_on_prediction(result_on_learn, Y_validate)
+            error += current_error
+            print "Current AUC on validate:\t", current_error
 
         error /= opts.bagging_iterations
         print "Error on cross-validation:\t", error
