@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sessions_general_reader.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calc_auc.py" afterPath="$PROJECT_DIR$/calc_auc.py" />
     </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,11 +51,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calc_auc.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="calc_auc.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/calc_auc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.027829314">
+              <folding>
+                <element signature="e#23#56#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,10 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sessions_general_reader.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sessions_general_reader.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sessions_general_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="26" selection-start="277" selection-end="277" vertical-scroll-proportion="0.3469388">
+            <state line="11" column="41" selection-start="290" selection-end="292" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
               </folding>
@@ -143,10 +145,10 @@
         <option value="$PROJECT_DIR$/statistics_user_info.py" />
         <option value="$PROJECT_DIR$/sklearn/sk_trainer_with_bagging.py" />
         <option value="$PROJECT_DIR$/prediction_combiner.py" />
-        <option value="$PROJECT_DIR$/calc_auc.py" />
         <option value="$PROJECT_DIR$/sklearn/sk_trainer.py" />
         <option value="$PROJECT_DIR$/filter_by_ids.py" />
         <option value="$PROJECT_DIR$/sessions_general_reader.py" />
+        <option value="$PROJECT_DIR$/calc_auc.py" />
       </list>
     </option>
   </component>
@@ -493,13 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calc_auc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/features_top_urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="13" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
@@ -541,7 +536,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sessions_general_reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="277" selection-end="277" vertical-scroll-proportion="0.3469388">
+        <state line="11" column="41" selection-start="290" selection-end="292" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#23#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calc_auc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.027829314">
           <folding>
             <element signature="e#23#56#0" expanded="true" />
           </folding>
