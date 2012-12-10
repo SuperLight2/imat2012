@@ -17,6 +17,9 @@ class UserInfo(object):
         self.click_time_query_sum = 0
         self.first_click_time_query_sum = 0
 
+        self.switch_count_from_toolbar = 0
+        self.switch_count_from_search = 0
+
         self.ctr_length = 10
         self.ctr_clicks = [0] * self.ctr_length
         self.ctr_shows = [0] * self.ctr_length
@@ -26,6 +29,11 @@ class UserInfo(object):
         if session.has_switch():
             self.sessions_with_switch += 1
         self.switch_count += len(session.switches)
+        if session.swith_type in ['B', 'H']:
+            self.switch_count_from_toolbar += 1
+        if session.swith_type in ['P', 'H']:
+            self.switch_count_from_search += 1
+
         for switch in session.switches:
             self.switch_time_sum += switch.time_passed
 
@@ -62,6 +70,8 @@ class UserInfo(object):
 
         print "\t".join(map(str, [self.user_id, self.sessions,
                                   1.0 * self.sessions_with_switch / self.sessions,
+                                  1.0 * self.switch_count_from_toolbar / self.sessions,
+                                  1.0 * self.switch_count_from_search / self.sessions,
                                   1.0 * self.sessions_without_clicks / self.sessions,
                                   self.clicks_count,
                                   self.switch_count,

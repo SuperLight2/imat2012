@@ -9,6 +9,8 @@ class UserFeatureCalcer(FeaturesCalcer):
         """
         user`s count of sessions
         user`s percentage of sessions with switch
+        user`s percentage of sessions with switch from toolbar
+        user`s percentage of sessions with switch from search
         user`s percentage of sessions without clicks
         user`s clicks count
         user`s switch count
