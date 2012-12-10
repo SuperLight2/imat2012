@@ -156,7 +156,7 @@ def main():
 
     f_out = open(test_result_file, "w")
     for index in xrange(len(result_on_test)):
-        print >> f_out, result_on_learn[index] / opts.bagging_iterations
+        print >> f_out, result_on_test[index] / opts.bagging_iterations
     f_out.close()
 
 
