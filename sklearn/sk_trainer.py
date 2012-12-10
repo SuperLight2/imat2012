@@ -91,8 +91,8 @@ def main():
     #model = RandomForestRegressor(n_estimators=15, max_depth=6, n_jobs=5)
     #model = ExtraTreesRegressor(n_estimators=opts.iterations, max_depth=6, compute_importances=False, n_jobs=5)
     #model = ExtraTreesClassifier(n_estimators=opts.iterations, max_depth=6, compute_importances=False, n_jobs=5)
-    #model = GradientBoostingRegressor(loss='ls', n_estimators=opts.iterations, max_depth=6, learning_rate=0.05, subsample=0.8)
-    model = GradientBoostingClassifier(n_estimators=opts.iterations, learning_rate=0.05, subsample=0.8, max_depth=6)
+    #model = GradientBoostingRegressor(loss='ls', n_estimators=opts.iterations, max_depth=6, learn_rate=0.05, subsample=0.8)
+    model = GradientBoostingClassifier(n_estimators=opts.iterations, learn_rate=0.05, subsample=0.8, max_depth=6)
 
     result_on_test = {}
     result_on_learn = {}
@@ -150,13 +150,13 @@ def main():
         print >> sys.stderr, "Error on cross-validation:\t", error
 
     f_out = open(train_result_file, "w")
-    for prediction in result_on_learn:
-        print >> f_out, prediction / opts.bagging_iterations
+    for index in xrange(len(result_on_learn)):
+        print >> f_out, result_on_learn[index] / opts.bagging_iterations
     f_out.close()
 
     f_out = open(test_result_file, "w")
-    for prediction in result_on_test:
-        print >> f_out, prediction / opts.bagging_iterations
+    for index in xrange(len(result_on_test)):
+        print >> f_out, result_on_learn[index] / opts.bagging_iterations
     f_out.close()
 
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calc_auc.py" afterPath="$PROJECT_DIR$/calc_auc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sklearn/sk_trainer.py" afterPath="$PROJECT_DIR$/sklearn/sk_trainer.py" />
     </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,10 +22,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sk_trainer.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="sk_trainer.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="24" selection-start="4732" selection-end="4732" vertical-scroll-proportion="0.0">
+            <state line="93" column="103" selection-start="3487" selection-end="3487" vertical-scroll-proportion="0.5475285">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
               </folding>
@@ -51,10 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calc_auc.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="calc_auc.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calc_auc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="40" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.5009276">
+            <state line="27" column="40" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
               </folding>
@@ -145,10 +145,10 @@
         <option value="$PROJECT_DIR$/statistics_user_info.py" />
         <option value="$PROJECT_DIR$/sklearn/sk_trainer_with_bagging.py" />
         <option value="$PROJECT_DIR$/prediction_combiner.py" />
-        <option value="$PROJECT_DIR$/sklearn/sk_trainer.py" />
         <option value="$PROJECT_DIR$/filter_by_ids.py" />
         <option value="$PROJECT_DIR$/sessions_general_reader.py" />
         <option value="$PROJECT_DIR$/calc_auc.py" />
+        <option value="$PROJECT_DIR$/sklearn/sk_trainer.py" />
       </list>
     </option>
   </component>
@@ -509,15 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="24" selection-start="4732" selection-end="4732" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#23#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/filter_by_ids.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="28" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0">
@@ -545,7 +536,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calc_auc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="40" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.5009276">
+        <state line="27" column="40" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#23#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sklearn/sk_trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="103" selection-start="3487" selection-end="3487" vertical-scroll-proportion="0.5475285">
           <folding>
             <element signature="e#23#56#0" expanded="true" />
           </folding>
