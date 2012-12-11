@@ -17,8 +17,7 @@ from sklearn.cross_validation import ShuffleSplit
 from sklearn.metrics import auc_score
 
 def calc_auc_on_prediction(probability_prediction, answer):
-    predictions = [value for key, value in probability_prediction.iteritems()]
-    return auc_score(answer, predictions)
+    return auc_score(answer, probability_prediction)
     #sub_result = []
     #for i in xrange(len(probability_prediction)):
     #    sub_result.append((probability_prediction[i], answer[i]))
@@ -26,12 +25,8 @@ def calc_auc_on_prediction(probability_prediction, answer):
 
 def add_to_result(model, X, result):
     Y = model.predict_proba(X)
-    index = -1
-    for prediction in Y:
-        index += 1
-        if index not in result:
-            result[index] = 0
-        result[index] += prediction[1]
+    for index in xrange(len(Y)):
+        result[index] += Y[index][1]
 
 def main():
     optparser = OptionParser(usage="""
@@ -94,9 +89,9 @@ def main():
     #model = GradientBoostingRegressor(loss='ls', n_estimators=opts.iterations, max_depth=6, learn_rate=0.05, subsample=0.8)
     model = GradientBoostingClassifier(n_estimators=opts.iterations, learn_rate=0.05, subsample=0.8, max_depth=6)
 
-    result_on_test = {}
-    result_on_learn = {}
-    result_on_validate = {}
+    result_on_test = [0] * len(_X_test)
+    result_on_learn = [0] * len(_X_learn)
+    result_on_validate = [0] * len(_X_validate)
 
     if opts.bagging_iterations is None:
         opts.bagging_iterations = 1
