@@ -25,6 +25,7 @@ def calc_auc_on_prediction(probability_prediction, answer):
 
 def add_to_result(model, X, result):
     Y = model.predict_proba(X)
+    #Y = model.predict(X)
     for index in xrange(len(Y)):
         result[index] += Y[index][1]
 
@@ -120,17 +121,17 @@ def main():
             if opts.validate_set is None:
                 X_sub_learn, X_validate, Y_sub_learn, Y_validate = [0] * 4
                 X_sub_learn, X_validate, Y_sub_learn, Y_validate = X_learn[train_index], X_learn[test_index], Y_learn[train_index], Y_learn[test_index]
+                result_on_validate = [0] * len(X_validate)
             else:
                 X_sub_learn, Y_sub_learn = [0] * 2
                 X_sub_learn, Y_sub_learn = X_learn[train_index], Y_learn[train_index]
-
 
             print >> sys.stderr, "Training"
             model.fit(X_sub_learn, Y_sub_learn)
 
             print >> sys.stderr, "Learn predicting"
             add_to_result(model, X_learn, result_on_learn)
-            print >> sys.stderr, "Current AUC on validate:\t", calc_auc_on_prediction(result_on_learn, Y_learn)
+            print >> sys.stderr, "Current AUC on learn:\t", calc_auc_on_prediction(result_on_learn, Y_learn)
 
             print >> sys.stderr, "Validate predicting"
             add_to_result(model, X_validate, result_on_validate)
