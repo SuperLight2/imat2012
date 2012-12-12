@@ -12,10 +12,10 @@ def main():
     weights = []
 
     current_weight = 1.0
-    for i in sys.argv[1:]:
-        is_float, value = try_to_float(sys.argv[i])
+    for filepath in sys.argv[1:]:
+        is_float, value = try_to_float(filepath)
         if not is_float:
-            files_to_combine.append(sys.argv[i])
+            files_to_combine.append(filepath)
             weights.append(current_weight)
             current_weight = 1.0
         else:
