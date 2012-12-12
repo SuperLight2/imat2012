@@ -33,13 +33,13 @@ def main():
             if (minimum is None) or (minimum > value):
                 minimum = value
 
-        index = 0
+        line_index = 0
         for line in open(filepath):
-            index += 1
+            line_index += 1
             value = float(line.strip())
-            if index not in result:
-                result[index] = 0
-            result[index] += weights[index] * (value - minimum) / (maximum - minimum)
+            if line_index not in result:
+                result[line_index] = 0
+            result[line_index] += weights[index] * (value - minimum) / (maximum - minimum)
 
     sum_weights = sum(weights)
     for index in result:

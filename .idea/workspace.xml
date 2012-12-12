@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prediction_combiner.py" afterPath="$PROJECT_DIR$/prediction_combiner.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sklearn/make_bagging.py" afterPath="$PROJECT_DIR$/sklearn/make_bagging.py" />
     </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +47,7 @@
       <file leaf-file-name="prediction_combiner.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prediction_combiner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="44" selection-start="371" selection-end="371" vertical-scroll-proportion="0.44155845">
+            <state line="41" column="29" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.8200371">
               <folding />
             </state>
           </provider>
@@ -560,7 +559,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prediction_combiner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="44" selection-start="371" selection-end="371" vertical-scroll-proportion="0.44155845">
+        <state line="41" column="29" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.8200371">
           <folding />
         </state>
       </provider>
