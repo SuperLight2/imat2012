@@ -1,5 +1,3 @@
-import sys
-
 from optparse import OptionParser
 
 def try_to_float(s):

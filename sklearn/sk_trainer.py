@@ -67,7 +67,7 @@ def main():
     print >> sys.stderr, "Reading Test..."
     for line in open(test_file):
         rows = line.strip().split('\t')
-        _X_test.append(rows[2:])
+        _X_test.append(rows[4:])
 
     if opts.validate_set is not None:
         print >> sys.stderr, "Reading Validate..."

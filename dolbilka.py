@@ -118,6 +118,10 @@ def main():
         os.system("cat %s >> %s" % (filepath, description_file))
         os.system("rm -f %s" % filepath)
 
+    _logger.info("Calcing correlation")
+    correlation_file = "correlation.tsv"
+    shell_cmd("python correlation_calcer.py %s %s > %s" % (description_file, train_prefix + result_file, correlation_file))
+
     _logger.info("Generating fml features_pool")
     shell_cmd("python convert_to_fml_features.py < " + train_prefix + result_file + " > fml_" + train_prefix + result_file)
     shell_cmd("python convert_to_fml_features.py < " + test_prefix + result_file + " > fml_" + test_prefix + result_file)
