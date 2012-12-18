@@ -16,6 +16,11 @@ from sklearn.ensemble import (RandomForestClassifier,
 from sklearn.cross_validation import ShuffleSplit
 from sklearn.metrics import auc_score
 
+
+def label2class_value(label):
+    values = [0, 1, 1.2, 1.5]
+    return values[label]
+
 def calc_auc_on_prediction(probability_prediction, answer):
     return auc_score(answer, probability_prediction)
     #sub_result = []
@@ -27,7 +32,10 @@ def add_to_result(model, X, result):
     Y = model.predict_proba(X)
     #Y = model.predict(X)
     for index in xrange(len(Y)):
-        result[index] += Y[index][1]
+        current_result = 0
+        for label in xrange(len(Y[index])):
+            current_result += label2class_value(label) * Y[index][label]
+        result[index] += current_result
 
 def main():
     optparser = OptionParser(usage="""
@@ -58,23 +66,26 @@ def main():
 
     _X_test = []
 
+    predicting_feature_index = 1
+    features_start_index = 4
+
     print >> sys.stderr, "Reading Learn..."
     for line in open(train_file):
         rows = line.strip().split('\t')
-        _Y_learn.append(int(rows[1]))
-        _X_learn.append(rows[2:])
+        _Y_learn.append(int(rows[predicting_feature_index]))
+        _X_learn.append(rows[features_start_index:])
 
     print >> sys.stderr, "Reading Test..."
     for line in open(test_file):
         rows = line.strip().split('\t')
-        _X_test.append(rows[4:])
+        _X_test.append(rows[features_start_index:])
 
     if opts.validate_set is not None:
         print >> sys.stderr, "Reading Validate..."
         for line in open(opts.validate_set):
             rows = line.strip().split('\t')
-            _Y_validate.append(int(rows[1]))
-            _X_validate.append(rows[2:])
+            _Y_validate.append(int(rows[predicting_feature_index]))
+            _X_validate.append(rows[features_start_index:])
 
 
     X_learn = np.array(_X_learn)
