@@ -22,7 +22,7 @@ def label2class_value(label):
     return values[label]
 
 def calc_auc_on_prediction(probability_prediction, answer):
-    return auc_score(answer, probability_prediction)
+    return auc_score([int(x != 0) for x in answer], probability_prediction)
     #sub_result = []
     #for i in xrange(len(probability_prediction)):
     #    sub_result.append((probability_prediction[i], answer[i]))
