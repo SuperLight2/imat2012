@@ -53,7 +53,6 @@ def main():
     calc_script(statistic_files["statistics_top_clicked_100_urls"], "statistics_top_clicked_urls.py", train_file, ["5 150 0.99985"])
     calc_script(statistic_files["user_statistics"], "statistics_user_info.py", train_file)
     calc_script(statistic_files["popular_queries"], "statistics_queries_info.py", train_file)
-    #shell_cmd("awk -v OFS='\\t' -F'\\t' '$3==\"Q\" {print $5}' %s |sort|uniq -c|awk '{print $1 \"\\t\" $2}'|sort -k 1 -nr > %s'" % (train_file, statistic_files["popular_queries"]))
 
     features_groups = {
         "id_and_answer": "group.id_and_answer",
@@ -131,8 +130,10 @@ def main():
         os.system("rm -f %s" % filepath)
 
     _logger.info("Calcing correlation")
+    correlation_exec_file = "correlation.out"
+    shell_cmd("g++ -O3 -o %s correlation_calcer.cpp" % correlation_exec_file)
     correlation_file = "correlation.tsv"
-    shell_cmd("python correlation_calcer.py %s %s > %s" % (description_file, train_prefix + result_file, correlation_file))
+    shell_cmd("./%s %s < %s > %s" % (correlation_exec_file, description_file, train_prefix + result_file, correlation_file))
 
     _logger.info("Generating fml features_pool")
     shell_cmd("python convert_to_fml_features.py < " + train_prefix + result_file + " > fml_" + train_prefix + result_file)

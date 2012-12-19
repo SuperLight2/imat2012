@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistics_queries_info.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dolbilka.py" afterPath="$PROJECT_DIR$/dolbilka.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features_top_queries.py" afterPath="$PROJECT_DIR$/features_top_queries.py" />
     </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +22,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dolbilka.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="dolbilka.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dolbilka.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="76" selection-start="2040" selection-end="2063" vertical-scroll-proportion="0.0">
+            <state line="135" column="27" selection-start="6624" selection-end="6624" vertical-scroll-proportion="0.70912546">
               <folding />
             </state>
           </provider>
@@ -63,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="features_top_queries.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="features_top_queries.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features_top_queries.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="25" selection-start="625" selection-end="625" vertical-scroll-proportion="0.5992579">
+            <state line="19" column="25" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
               </folding>
@@ -150,9 +147,9 @@
         <option value="$PROJECT_DIR$/features_users_info.py" />
         <option value="$PROJECT_DIR$/features_top_urls.py" />
         <option value="$PROJECT_DIR$/tools/queries_calcer.py" />
-        <option value="$PROJECT_DIR$/dolbilka.py" />
         <option value="$PROJECT_DIR$/statistics_queries_info.py" />
         <option value="$PROJECT_DIR$/features_top_queries.py" />
+        <option value="$PROJECT_DIR$/dolbilka.py" />
       </list>
     </option>
   </component>
@@ -549,13 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dolbilka.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="76" selection-start="2040" selection-end="2063" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statistics_queries_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="30" selection-start="605" selection-end="605" vertical-scroll-proportion="0.0">
@@ -567,10 +557,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/features_top_queries.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="25" selection-start="625" selection-end="625" vertical-scroll-proportion="0.5992579">
+        <state line="19" column="25" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#23#56#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dolbilka.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="27" selection-start="6624" selection-end="6624" vertical-scroll-proportion="0.70912546">
+          <folding />
         </state>
       </provider>
     </entry>
