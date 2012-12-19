@@ -72,8 +72,6 @@ int main(int argc, char** argv) {
                 prod[i][j] += s[i] * s[j];
             }
         }
-        if (linesCount % 100000 == 0)
-            cerr << linesCount << endl;
     }
 
     for (int i = 0; i < descriptions.size(); ++i) {

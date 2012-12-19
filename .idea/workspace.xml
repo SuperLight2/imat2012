@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dolbilka.py" afterPath="$PROJECT_DIR$/dolbilka.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/correlation_calcer.cpp" afterPath="$PROJECT_DIR$/correlation_calcer.cpp" />
     </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,10 +22,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dolbilka.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dolbilka.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dolbilka.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="27" selection-start="6624" selection-end="6624" vertical-scroll-proportion="0.70912546">
+            <state line="135" column="27" selection-start="6624" selection-end="6624" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="correlation_calcer.cpp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/correlation_calcer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="9" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.12737642">
               <folding />
             </state>
           </provider>
@@ -103,15 +112,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="features_users_info.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features_users_info.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="53" selection-start="244" selection-end="258" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="session_calcer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/session_calcer.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -142,7 +142,6 @@
         <option value="$PROJECT_DIR$/tools/id_and_switch_calcer.py" />
         <option value="$PROJECT_DIR$/sklearn/sk_trainer.py" />
         <option value="$PROJECT_DIR$/correlation_calcer.py" />
-        <option value="$PROJECT_DIR$/correlation_calcer.cpp" />
         <option value="$PROJECT_DIR$/get_feature_indexes.py" />
         <option value="$PROJECT_DIR$/features_users_info.py" />
         <option value="$PROJECT_DIR$/features_top_urls.py" />
@@ -150,6 +149,7 @@
         <option value="$PROJECT_DIR$/statistics_queries_info.py" />
         <option value="$PROJECT_DIR$/features_top_queries.py" />
         <option value="$PROJECT_DIR$/dolbilka.py" />
+        <option value="$PROJECT_DIR$/correlation_calcer.cpp" />
       </list>
     </option>
   </component>
@@ -485,13 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/correlation_calcer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="13" selection-start="3152" selection-end="3152" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/features_users_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="53" selection-start="244" selection-end="258" vertical-scroll-proportion="0.0">
@@ -566,7 +559,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dolbilka.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="27" selection-start="6624" selection-end="6624" vertical-scroll-proportion="0.70912546">
+        <state line="135" column="27" selection-start="6624" selection-end="6624" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/correlation_calcer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="9" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.12737642">
           <folding />
         </state>
       </provider>
