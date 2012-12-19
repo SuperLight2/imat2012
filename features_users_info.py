@@ -7,7 +7,7 @@ from tools.user_calcer import UserFeatureCalcer
 
 def main():
     optparser = OptionParser(usage="""
-            %prog [OPTIONS] TRAIN_FILE TEST_FILE""")
+            %prog [OPTIONS] TRAIN_FILE STATISTIC_FILE""")
     optparser.add_option('-d', '--description', dest='description_file',
         metavar='FILE', type='string', default=None,
         help='filepath for features description')

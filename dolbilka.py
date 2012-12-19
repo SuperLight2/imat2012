@@ -58,20 +58,23 @@ def main():
         "id_and_answer": "group.id_and_answer",
         "general_features": "group.general_features",
         "top_url": "group.top_url",
-        "user_info": "group.user_info"
+        "user_info": "group.user_info",
+        "top_queries": "group.queries",
     }
 
     feature_files = {
         features_groups["id_and_answer"]: "features.id_and_answer",
         features_groups["general_features"]: "features.general_features",
         features_groups["top_url"]: "features.top_url",
-        features_groups["user_info"]: "features.user_info"
+        features_groups["user_info"]: "features.user_info",
+        features_groups["top_queries"]: "features.queries",
     }
     features_description_file = {
         features_groups["id_and_answer"]: "description.id_and_answer",
         features_groups["general_features"]: "description.general_features",
         features_groups["top_url"]: "description.top_url",
-        features_groups["user_info"]: "description.user_info"
+        features_groups["user_info"]: "description.user_info",
+        features_groups["top_queries"]: "description.queries",
     }
 
     _logger.info("Generating id and answer column")
@@ -85,7 +88,7 @@ def main():
         ["-d " + features_description_file[features_groups["general_features"]]])
     calc_script(test_prefix + feature_files[features_groups["general_features"]], "features_session_general.py", test_file)
 
-    _logger.info("Statistic Features")
+    _logger.info("Url Statistic Features")
     calc_script(train_prefix + feature_files[features_groups["top_url"]], "features_top_urls.py", train_file,
         [statistic_files["statistics_top_clicked_100_urls"], "-d " + features_description_file[features_groups["top_url"]]])
     calc_script(test_prefix + feature_files[features_groups["top_url"]], "features_top_urls.py", test_file,
@@ -96,6 +99,12 @@ def main():
         [statistic_files["user_statistics"], "-d " + features_description_file[features_groups["user_info"]]])
     calc_script(test_prefix + feature_files[features_groups["user_info"]], "features_users_info.py", test_file,
         [statistic_files["user_statistics"]])
+
+    _logger.info("Queries Statistic Features")
+    calc_script(train_prefix + feature_files[features_groups["top_queries"]], "features_top_queries.py", train_file,
+        [statistic_files["popular_queries"], "-d " + features_description_file[features_groups["top_queries"]]])
+    calc_script(test_prefix + feature_files[features_groups["top_queries"]], "features_top_queries.py", test_file,
+        [statistic_files["popular_queries"]])
 
     _logger.info("File list building")
     train_files_to_join = [train_prefix + feature_files[features_groups["id_and_answer"]]]
