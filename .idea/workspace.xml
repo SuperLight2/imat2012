@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4f44dac-1069-4e82-b869-a2a186bb2ecf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/correlation_calcer.py" afterPath="$PROJECT_DIR$/correlation_calcer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dolbilka.py" afterPath="$PROJECT_DIR$/dolbilka.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/correlation_calcer.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="imat2012.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,10 +43,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dolbilka.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dolbilka.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dolbilka.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="24" selection-start="6070" selection-end="6070" vertical-scroll-proportion="2.9068441">
+            <state line="126" column="24" selection-start="6070" selection-end="6070" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="correlation_calcer.cpp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/correlation_calcer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="0" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.7476809">
               <folding />
             </state>
           </provider>
@@ -93,24 +102,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calc_auc.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calc_auc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="40" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filter_by_ids.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/filter_by_ids.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="215" selection-end="348" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="make_bagging.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sklearn/make_bagging.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -133,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tools/features_calcer.py" />
         <option value="$PROJECT_DIR$/sklearn/auc_calcer.py" />
         <option value="$PROJECT_DIR$/tools/ml_tools.py" />
         <option value="$PROJECT_DIR$/tools/session_calcer.py" />
@@ -149,6 +139,7 @@
         <option value="$PROJECT_DIR$/sklearn/sk_trainer.py" />
         <option value="$PROJECT_DIR$/dolbilka.py" />
         <option value="$PROJECT_DIR$/correlation_calcer.py" />
+        <option value="$PROJECT_DIR$/correlation_calcer.cpp" />
       </list>
     </option>
   </component>
@@ -443,16 +434,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/features_session_general.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="17" selection-start="0" selection-end="896" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sessions_general_reader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="41" selection-start="290" selection-end="292" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/features_users_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0" />
@@ -545,7 +526,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dolbilka.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="24" selection-start="6070" selection-end="6070" vertical-scroll-proportion="2.9068441">
+        <state line="126" column="24" selection-start="6070" selection-end="6070" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/correlation_calcer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.7476809">
           <folding />
         </state>
       </provider>
