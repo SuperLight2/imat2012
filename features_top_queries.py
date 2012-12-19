@@ -16,8 +16,8 @@ def main():
     queries = {}
     for line in open(args[1]):
         s = line.strip().split('\t')
-        count = int(s[0])
-        query_id = int(s[1])
+        query_id = int(s[0])
+        count = int(s[1])
         queries[query_id] = count
 
     queries_features_calcer = QueriesFeatureCalcer(queries)
