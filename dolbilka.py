@@ -52,7 +52,7 @@ def main():
     _logger.info("Calcing Statistics")
     calc_script(statistic_files["statistics_top_clicked_100_urls"], "statistics_top_clicked_urls.py", train_file, ["5 150 0.99985"])
     calc_script(statistic_files["user_statistics"], "statistics_user_info.py", train_file)
-    shell_cmd("awk -v OFS='\t' -F'\t' '$3==\"Q\" {print $5}' %s |sort|uniq -c|sort -k 1 -nr > %s'" % (train_file, statistic_files["popular_queries"]))
+    shell_cmd("awk -v OFS='\\t' -F'\\t' '$3==\"Q\" {print $5}' %s |sort|uniq -c|awk '{print $1 \"\\t\" $2}'|sort -k 1 -nr > %s'" % (train_file, statistic_files["popular_queries"]))
 
     features_groups = {
         "id_and_answer": "group.id_and_answer",
