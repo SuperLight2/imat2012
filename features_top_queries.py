@@ -17,8 +17,7 @@ def main():
     for line in open(args[1]):
         s = line.strip().split('\t')
         query_id = int(s[0])
-        count = int(s[1])
-        queries[query_id] = count
+        queries[query_id] = map(float, s[1:])
 
     queries_features_calcer = QueriesFeatureCalcer(queries)
     for session in SessionReader().open(args[0]):
