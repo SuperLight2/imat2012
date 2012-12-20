@@ -17,7 +17,7 @@ def main():
     opts, args = optparser.parse_args()
 
 
-    if len(args) == 2:
+    if len(args) < 2:
         answers = []
         for line in sys.stdin:
             if not line.strip():

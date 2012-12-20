@@ -8,14 +8,18 @@ class UserFeatureCalcer(FeaturesCalcer):
     def feature_user_info(self, session):
         """
         user`s count of sessions
-        user`s percentage of sessions with switch
         user`s activity days count
+        user`s percentage of sessions with switch
+        user`s uniq switch count / queries count
+        user`s sessions_with_switch / clicks_count
         user`s percentage of sessions with switch from toolbar
         user`s percentage of sessions with switch from search
         user`s percentage of sessions without clicks
         user`s clicks count
         user`s switch count
         user`s switch count / queries count
+        user`s switch count / sessions count
+        user`s switch count / clicks_count
         user`s average clicks count on query
         user`s average switch time
         user`s average click time
