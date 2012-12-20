@@ -133,7 +133,7 @@ def main():
     correlation_exec_file = "correlation.out"
     shell_cmd("g++ -O3 -o %s correlation_calcer.cpp" % correlation_exec_file)
     correlation_file = "correlation.tsv"
-    shell_cmd("./%s %s < %s > %s" % (correlation_exec_file, description_file, train_prefix + result_file, correlation_file))
+    shell_cmd("./%s %s %s > %s" % (correlation_exec_file, description_file, train_prefix + result_file, correlation_file))
 
     _logger.info("Generating fml features_pool")
     shell_cmd("python convert_to_fml_features.py < " + train_prefix + result_file + " > fml_" + train_prefix + result_file)
