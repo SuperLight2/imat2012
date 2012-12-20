@@ -85,7 +85,7 @@ class UserInfo(object):
                                   1.0 * self.switch_count / self.sessions,
                                   1.0 * self.clicks_count / self.queries_count,
                                   1.0 * self.switch_count / (self.clicks_count + 1e-6),
-                                  1.0 * self.switch_time_sum / self.switch_count,
+                                  1.0 * self.switch_time_sum / (self.switch_count + 1e-6),
                                   1.0 * self.click_times_sum / self.sessions,
                                   1.0 * self.click_time_query_sum / self.queries_count,
                                   1.0 * self.first_click_time_query_sum / self.queries_count,

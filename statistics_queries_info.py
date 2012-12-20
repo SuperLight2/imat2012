@@ -22,7 +22,7 @@ def main():
             uniq_switch_count[query.query_id] += int(session.has_switch())
             switch_count[query.query_id] += len(session.switches)
 
-    for query_id in queries_count.iteritems():
+    for query_id in queries_count.keys():
         print "\t".join(map(str,
             [query_id, queries_count[query_id], uniq_switch_count[query_id], switch_count[query_id]]))
 
